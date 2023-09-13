@@ -1,26 +1,14 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import AddSubscription from "./addSubscription";
+import EditSubscription from "./editSubscription";
 
 export default async function Subscriptions() {
 const supabase = createServerComponentClient({ cookies })
 
 let { data: subscriptions, error } = await supabase
-  .from('subscriptions')
-  .select("name,cost")
-
-async function test() {
-    const { data } = await supabase
-    .from("subscriptions")
-    .insert([
-        { 
-        name: "test",
-        cost: "100",
-        },
-    ])
-}
-
-test();
+    .from('subscriptions')
+    .select("name,cost")
     
     return (
         <div>
@@ -36,6 +24,7 @@ test();
             ))}
             </ul>
             <AddSubscription />
+            <EditSubscription />
         </div>
     );
 }
