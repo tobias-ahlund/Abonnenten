@@ -1,37 +1,43 @@
 "use client"
 
-import { createClient } from '@supabase/supabase-js'
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AddSubscription() {
     const [subName, setSubName] = useState(" ");
     const [cost, setCost] = useState(" ");
 
+    const router = useRouter();
+
     const supabase_url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
     const supabase_anon_key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-    const supabase = createClient(supabase_url, supabase_anon_key)
+    const supabase = createClientComponentClient()
 
     async function handleAddSub() {
-        const { data: { user } } = await supabase.auth.getUser();
-
-        const { data, error } = await supabase
-        .from("subscriptions")
-        .insert([
-            { 
-                /* user_id: user?.id, */
-                name: subName, 
-                cost: cost 
-            },
-        ])
-
-        if (error) {
-            console.log(error);
-        }
-
-        if (data) {
-            console.log(data);
-        }
+        const { data: {session} } = await supabase.auth.getSession();
+        console.log(session?.user.id);
         
+        if (session) {
+            const { data, error } = await supabase
+            .from("subscriptions")
+            .insert([
+                { 
+                    user_id: session?.user?.id,
+                    name: subName, 
+                    cost: cost,
+                },
+            ])
+
+            if (error) {
+                console.log(error);
+            }
+
+            if (data) {
+                console.log(data);
+            }
+            router.refresh();
+        }
     }
 
     return (
