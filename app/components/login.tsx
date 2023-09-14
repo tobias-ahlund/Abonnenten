@@ -4,7 +4,7 @@
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
-import type { Database } from "../lib/database.types";
+import type { Database } from "../../lib/database.types";
 import { useState } from "react";
 
 interface LoginProps {
