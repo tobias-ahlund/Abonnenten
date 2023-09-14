@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: 'Håll koll på dina abonnemang',
 }
 
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({
   children,
 }: {
