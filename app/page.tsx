@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { Database } from "@/lib/database.types";
 import Subscriptions from "./subscriptions";
+import DeleteUser from "./deleteUser";
 
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies });
@@ -23,6 +24,7 @@ export default async function Home() {
   return (
     <>
       <h1>Välkommen till startsidan, {user?.email}</h1>
+      <DeleteUser />
       <Login signedIn={signedIn}/>
       <Subscriptions />
     </>
