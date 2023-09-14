@@ -13,12 +13,23 @@ export default function DeleteUser() {
     }
 
     async function handleDelete() {
-        const { data, error } = await supabase.auth.admin
-            .deleteUser("edfsdf");
+        const { data: {session} } = await supabase.auth.getSession();
+        console.log(session?.user.id);
 
-        if (error) {
-            console.log(error);
+        if (session) {
+            
+            const { data, error } = await supabase.auth.admin
+                .deleteUser(session?.user.id);
+    
+            if (error) {
+                console.log(error);
+            }
+
+            console.log(session, data);
         }
+
+        
+
     }
 
     console.log(deleteInit);
