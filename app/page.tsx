@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { Database } from "@/lib/database.types";
 import Subscriptions from "./components/subscriptions";
 import DeleteUser from "./components/deleteUser";
+import Link from "next/link";
 
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies });
@@ -24,6 +25,7 @@ export default async function Home() {
     <>
       <h1>Spara pengar på dina abonnemang!</h1>
       <Login/>
+      <p>Genom att fortsätta godkänner du Abonnentens <Link href="/support">allmäna villkor</Link>, <Link href="/support">integritetspolicy</Link> och att vi får inhämta avtalsinformation enligt <Link href="/support">informationsfullmakten</Link>.</p>
     </>
   )
 }

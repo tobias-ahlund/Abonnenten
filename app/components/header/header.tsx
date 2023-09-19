@@ -4,7 +4,7 @@ export default function Header(){
     return (
         <header>
             <div>
-                <Link href="/dashboard">
+                <Link href="/">
                     <div>
                         <p>Logo</p>
                         <p>Abonnenten</p>
