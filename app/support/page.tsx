@@ -3,5 +3,15 @@
 // lista som innehåller länkar till: Allmänna vilkor, integritetspolicy och fullmakt.
 
 export default function Tos() {
-    return <p>Terms of service</p>
+    return (
+    <>
+    <h1>Support</h1>
+    <ul>
+        {
+            //Conditional rendering 
+        }
+    </ul>
+    </>
+    
+    )
 }

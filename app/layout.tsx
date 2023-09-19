@@ -1,8 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Header from './components/header/header'
-import Head from 'next/head'
 
 export const metadata: Metadata = {
   title: 'Abonnenten',

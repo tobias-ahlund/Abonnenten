@@ -13,7 +13,7 @@ export default function Footer(){
                         <Link href={"/dashboard/subscriptions"}>Abonnemang</Link>
                     </li>
                     <li>
-                        <Link href={"/dashboard"}>FAQ</Link>
+                        <Link href={"/support"}>FAQ</Link>
                     </li>
                     <li>
                         <Link href={"/dashboard/profile"}>Profil</Link>
