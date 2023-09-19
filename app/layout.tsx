@@ -2,8 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Header from './components/header/header'
-
-const inter = Inter({ subsets: ['latin'] })
+import Head from 'next/head'
 
 export const metadata: Metadata = {
   title: 'Abonnenten',
@@ -19,10 +18,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sv">
+      {/* <head>
+      <link rel="stylesheet" href="https://use.typekit.net/rie0uwt.css"/> 
+      </head> */}
       
-      <body className={inter.className}>
+      <body className={"elza"}>
+      <main>
       <Header></Header>
         {children}
+        </main>
         </body>
     </html>
   )

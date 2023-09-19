@@ -1,0 +1,100 @@
+:root {
+    --colors-base-brand: #FFCC50FF;
+    --colors-base-high-light: #FFFFFFFF;
+    --colors-base-primary: #F2F2F2FF;
+    --colors-base-secondary: #1F1F1FFF;
+    --colors-base-semantic_error: #BF3C54FF;
+    --colors-base-semantic_error_dl: #BF3C54FF;
+    --colors-base-semantic_error_hover: #B63950FF;
+    --colors-base-semantic_info: #44BFC7FF;
+    --colors-base-semantic_success: #74B96EFF;
+    --colors-base-semantic_warning: #FF6847FF;
+    --colors-components-bg: var(--colors-base-primary);
+    --colors-components-bg_brand: #FFCC50FF;
+    --colors-components-box-bg: var(--colors-base-brand);
+    --colors-components-button-bg: var(--colors-base-secondary);
+    --colors-components-button-bg_reversed: #F2F2F2FF;
+    --colors-components-field-bg: var(--colors-base-primary);
+    --colors-components-on-bg: var(--colors-base-secondary);
+    --colors-components-on-bg_brand: #1F1F1FFF;
+    --colors-components-on-box: var(--colors-base-secondary);
+    --colors-components-on-button: var(--colors-base-primary);
+    --colors-components-on-button_reversed: #1F1F1FFF;
+    --colors-components-primary_light-dark: #F2F2F2FF;
+    --colors-components-stroke: var(--colors-base-secondary);
+    --colors-components-text-on-field: var(--colors-neutrals-50);
+    --colors-neutrals-10: #E7E7E7FF;
+    --colors-neutrals-100: #1F1F1FFF;
+    --colors-neutrals-20: #D0D0D0FF;
+    --colors-neutrals-40: #A1A1A1FF;
+    --colors-neutrals-5: #F3F3F3FF;
+    --colors-neutrals-50: #898989FF;
+    --colors-neutrals-60: #717171FF;
+    --colors-neutrals-80: #424242FF;
+    --measures-height-box: 40px;
+    --measures-height-button_l: 60px;
+    --measures-height-button_m: 52px;
+    --measures-padding-large: 40px;
+    --measures-padding-medium: 20px;
+    --measures-padding-small: 8px;
+    --measures-radius-round_20: 20px;
+    --measures-radius-round_50: 50px;
+    --measures-width-box_max: 439px;
+    --measures-width-box_min: 320px;
+    --measures-width-mobile_max: 479px;
+    --measures-width-mobile_min: 360px;
+}
+
+@import url("https://p.typekit.net/p.css?s=1&k=rie0uwt&ht=tk&f=52025.52026&a=130402303&app=typekit&e=css");
+
+@font-face {
+font-family:"elza-round-variable";
+src:url("https://use.typekit.net/af/8923d8/0000000000000000774bf5a3/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/8923d8/0000000000000000774bf5a3/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/8923d8/0000000000000000774bf5a3/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"elza-round-variable";
+src:url("https://use.typekit.net/af/cecc41/0000000000000000774bf5a4/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/cecc41/0000000000000000774bf5a4/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/cecc41/0000000000000000774bf5a4/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+.elza { font-family: "elza-round-variable",sans-serif; }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: "elza-round-variable", sans-serif; */
+    background-color: var(--color-almost-black);
+    color: var(--color-white);
+    margin: 0;
+
+}
+
+main {
+    background-color: #D9D9D9;
+    color: #1F1F1F;
+    
+}
+
+@media only screen and (min-width: 446px) {
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+    }
+
+    main {
+        overflow: scroll;
+        width: 446px;
+        height: 667px;
+        margin: auto;
+        border-radius: 15px;
+    }
+
+}

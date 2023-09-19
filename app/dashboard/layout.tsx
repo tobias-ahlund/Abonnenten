@@ -9,9 +9,7 @@ export default function UserLayout({
 }) {
   return (
     <>
-        <main>
         {children}
-        </main>
     <Footer/>
     </>
   )
