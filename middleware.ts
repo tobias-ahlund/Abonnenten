@@ -7,10 +7,25 @@ import { NextResponse } from "next/server";
 
 import type { NextRequest } from "next/server";
 import type { Database } from "@/lib/database.types";
+import { redirect } from "next/dist/server/api-utils";
 
 export async function middleware(req: NextRequest) {
+    const dashboardPath = '/dashboard'
     const res = NextResponse.next();
     const supabase = createMiddlewareClient<Database>({ req, res });
-    await supabase.auth.getSession();
+
+    const url = req.nextUrl.clone()
+    url.pathname = '/'
+
+    const {
+        data: { session },
+      } = await supabase.auth.getSession();
+
+    if (!session) {
+        if (req.nextUrl.pathname.startsWith(dashboardPath)) {
+          return NextResponse.redirect(url);
+        }
+      }
+
     return res;
 }
