@@ -7,6 +7,7 @@ import Subscriptions from "./components/subscriptions";
 import DeleteUser from "./components/deleteUser";
 import Link from "next/link";
 
+
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies });
 
