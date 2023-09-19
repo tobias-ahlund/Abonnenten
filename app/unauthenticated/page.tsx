@@ -12,14 +12,10 @@ export default async function Unauthenticated() {
 
   let signedIn = false;
 
-  if (session) {
-    redirect("/");
-  } 
-
   return (
     <div>
       <p>Välommen till Abonnenten. Logga in för att fortsätta.</p>
-      <Login signedIn={signedIn}/>
+      <Login/>
     </div>
   );
 }

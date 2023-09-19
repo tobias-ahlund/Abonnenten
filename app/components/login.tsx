@@ -7,11 +7,11 @@ import { useRouter } from "next/navigation";
 import type { Database } from "../../lib/database.types";
 import { useState } from "react";
 
-interface LoginProps {
-  signedIn: boolean;
-}
+// interface LoginProps {
+//   signedIn: boolean;
+// }
 
-export default function Login({ signedIn }: LoginProps ) {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -44,7 +44,6 @@ export default function Login({ signedIn }: LoginProps ) {
 
   return (
       <div>
-        {!signedIn && (
           <>
             <form>
               <label htmlFor="email">Mejl</label>
@@ -66,17 +65,12 @@ export default function Login({ signedIn }: LoginProps ) {
               />
             </form>
           </>
-        )}
-        {!signedIn && (
         <>
           <br />
           <button onClick={handleSignIn}>Logga in</button>
           <br />
           <button onClick={handleSignUp}>Bli medlem</button>
         </>
-        )}
-        {signedIn && <button onClick={handleSignOut}>Logga ut</button>}
-        <p>Inloggningsstatus: {signedIn ? "Inloggad" : "Utloggad"}</p>
       </div>
   )
 }

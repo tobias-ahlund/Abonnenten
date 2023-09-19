@@ -14,19 +14,16 @@ export default async function Home() {
   } = await supabase.auth.getSession();
 
   const { data: { user } } = await supabase.auth.getUser();
-
-  let signedIn = true;
-
-  if (!session) {
-    redirect("/unauthenticated");
+  
+  if (session) {
+    redirect("/dashboard");
   } 
+  
 
   return (
     <>
-      <h1>Välkommen till startsidan, {user?.email}</h1>
-      <DeleteUser />
-      <Login signedIn={signedIn}/>
-      <Subscriptions />
+      <h1>Spara pengar på dina abonnemang!</h1>
+      <Login/>
     </>
   )
 }
