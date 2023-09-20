@@ -16,16 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sv">
-      {/* <head>
-      <link rel="stylesheet" href="https://use.typekit.net/rie0uwt.css"/> 
-      </head> */}
-      
       <body className={"elza"}>
-      <main>
-      <Header></Header>
-        {children}
+        <div className='mobile-frame'>
+        <main>
+        <Header/>
+          {children}
         </main>
-        </body>
+        </div>
+      </body>
     </html>
   )
 }
