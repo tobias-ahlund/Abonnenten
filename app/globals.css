@@ -99,6 +99,12 @@ main {
         height: 667px;
         margin: auto;
         border-radius: 15px;
+        -ms-overflow-style: none;  /* Hide scrollbar (Explorer, Edge) */
+        scrollbar-width: none;  /* Hide scrollbar (Firefox) */
     }
 
+    /* Hide scrollbar (Chrome, Safari, Opera) */
+    .mobile-frame::-webkit-scrollbar {
+        display: none;
+    }
 }

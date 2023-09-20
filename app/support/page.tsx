@@ -41,10 +41,9 @@ export default function Support() {
 
     return (
     <>
-        <h1>Support</h1>
+        {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : <><h1>Support</h1><hr /></>} 
         <section className={styles.menuWrapper}>
-            <article className={styles.menuItem}>
-                <hr />
+            <article className={[styles.menuItem, isActive1 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive1}>
                     <div className={styles.menuItemHeading}>
                         <h1>Integritetspolicy</h1>
@@ -58,9 +57,9 @@ export default function Support() {
                         <Integrity />
                     </div>
                 </div>
-            </article>
-            <article className={styles.menuItem}>
                 <hr />
+            </article>
+            <article className={[styles.menuItem, isActive2 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive2}>
                     <div className={styles.menuItemHeading}>
                         <h1>Fullmakt</h1>
@@ -74,9 +73,9 @@ export default function Support() {
                         <Mandate />
                     </div>
                 </div>
-            </article>
-            <article className={styles.menuItem}>
                 <hr />
+            </article>
+            <article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive3}>
                     <div className={styles.menuItemHeading}>
                         <h1>Användarvillkor</h1>
@@ -90,6 +89,10 @@ export default function Support() {
                         <Terms />
                     </div>
                 </div>
+            <hr />
+            </article>
+            <article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
+                <h1>Exempelrubrik (ej klickbar)</h1>
             </article>
         </section>
     </>
