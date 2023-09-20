@@ -1,6 +1,8 @@
 "use client"
 
 import styles from './styles.module.css'
+import Image from 'next/image';
+import Cross from "app/public/images/cross.svg";
 
 // terms of service 
 // footer om inloggad annars bara header i layout. 
@@ -20,58 +22,76 @@ export default function Support() {
     const [isActive3, setActive3] = useState(false);
 
     function toggleActive1() {
-        setActive1(true);
+        setActive1(!isActive1);
         setActive2(false);
         setActive3(false);
     }
 
     function toggleActive2() {
         setActive1(false);
-        setActive2(true);
+        setActive2(!isActive2);
         setActive3(false);
     }
 
     function toggleActive3() {
         setActive1(false);
         setActive2(false);
-        setActive3(true);
+        setActive3(!isActive3);
     }
 
     return (
     <>
-    <h1>Support</h1>
-    <ul>
-        {/* {
-            supportList?.map((support:any, index) => (
-                <li key={index}>
-                    <span>{support}</span>
-                </li>
-        ))} */}
-        <li>
-            <div onClick={toggleActive1}>
-                <h1>Integritetspolicy</h1>
-                <section className={isActive1 ? styles.display : styles.hide}>
-                    <Integrity />
-                </section>
-            </div>
-        </li>
-        <li>
-            <div onClick={toggleActive2}>
-                <h1>Fullmakt</h1>
-                <section className={isActive2 ? styles.display : styles.hide}>
-                    <Mandate />
-                </section>
-            </div>
-        </li>
-        <li>
-            <div onClick={toggleActive3}>
-                <h1>Användarvillkor</h1>
-                <section className={isActive3 ? styles.display : styles.hide}>
-                    <Terms />
-                </section>
-            </div>
-        </li>
-    </ul>
+        <h1>Support</h1>
+        <section className={styles.menuWrapper}>
+            <article className={styles.menuItem}>
+                <hr />
+                <div onClick={toggleActive1}>
+                    <div className={styles.menuItemHeading}>
+                        <h1>Integritetspolicy</h1>
+                        <Image 
+                            className={[styles.cross, isActive1 ? styles.display : styles.hide].join(" ")} 
+                            onClick={toggleActive1} 
+                            src={Cross} alt="close button" 
+                        />
+                    </div>
+                    <div className={isActive1 ? styles.display : styles.hide}>
+                        <Integrity />
+                    </div>
+                </div>
+            </article>
+            <article className={styles.menuItem}>
+                <hr />
+                <div onClick={toggleActive2}>
+                    <div className={styles.menuItemHeading}>
+                        <h1>Fullmakt</h1>
+                        <Image 
+                            className={[styles.cross, isActive2 ? styles.display : styles.hide].join(" ")} 
+                            onClick={toggleActive2} 
+                            src={Cross} alt="close button" 
+                        />
+                    </div>
+                    <div className={isActive2 ? styles.display : styles.hide}>
+                        <Mandate />
+                    </div>
+                </div>
+            </article>
+            <article className={styles.menuItem}>
+                <hr />
+                <div onClick={toggleActive3}>
+                    <div className={styles.menuItemHeading}>
+                        <h1>Användarvillkor</h1>
+                        <Image 
+                            className={[styles.cross, isActive3 ? styles.display : styles.hide].join(" ")} 
+                            onClick={toggleActive3} 
+                            src={Cross} alt="close button" 
+                        />
+                    </div>
+                    <div className={isActive3 ? styles.display : styles.hide}>
+                        <Terms />
+                    </div>
+                </div>
+            </article>
+        </section>
     </>
     
     )

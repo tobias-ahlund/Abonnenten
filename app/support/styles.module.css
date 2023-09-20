@@ -5,3 +5,17 @@
 .hide {
     display: none;
 }
+
+.menuItemHeading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.cross {
+    /* */
+}

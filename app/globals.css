@@ -70,7 +70,11 @@ body {
     background-color: var(--color-almost-black);
     color: var(--color-white);
     margin: 0;
+    padding: 0;
+}
 
+li::marker {
+    content: none;
 }
 
 main {
