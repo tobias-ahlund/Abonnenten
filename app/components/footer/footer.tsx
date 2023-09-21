@@ -7,7 +7,6 @@ import { footerLinkArray } from "./footerLink"
 export default function Footer(){
     return (
         <footer className={styles.footer}>
-            <hr />
             <nav>
                 <ul className={styles.ul}>
                     {footerLinkArray.map(footerLink => {return(

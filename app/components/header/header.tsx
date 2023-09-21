@@ -4,17 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "app/public/images/logo_abo.svg"
+import styles from "./styles.module.css";
 
 export default function Header(){
     return (
         <header>
-            <div>
-                <Link href="/">
+            <Link href="/">
                 <Image priority src={Logo} alt="Abonnenten logo"/>
-                </Link>
-                <p>Mörkt/ljust läge</p>
-            </div>
-            <hr />
+            </Link>
+            <p>Mörkt/ljust läge</p>
         </header>
     )
 }
