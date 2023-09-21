@@ -16,16 +16,11 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic'
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-
+export default async function RootLayout({ children }: {children: React.ReactNode}) {
   const supabase = createServerComponentClient<Database>({ cookies });
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
+    data: { session }
+} = await supabase.auth.getSession();
   
   return (
     <html lang="sv">
