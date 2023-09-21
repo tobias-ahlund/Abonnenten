@@ -11,16 +11,9 @@ export default async function UserLayout({
   children: React.ReactNode
 }) {
 
-    const supabase = createServerComponentClient<Database>({ cookies });
-
-    const {
-        data: { session },
-      } = await supabase.auth.getSession();
-
   return (
     <>
         {children}
-    {session && <Footer/>}
     </>
   )
 }

@@ -16,6 +16,10 @@
     flex-direction: column;
 }
 
+.menuItem:last-child {
+    order: 100;
+}
+
 .cross {
     /* */
 }

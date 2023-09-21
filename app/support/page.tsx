@@ -46,7 +46,7 @@ export default function Support() {
             <article className={[styles.menuItem, isActive1 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive1}>
                     <div className={styles.menuItemHeading}>
-                        <h1>Integritetspolicy</h1>
+                        <h2>Integritetspolicy</h2>
                         <Image 
                             className={[styles.cross, isActive1 ? styles.display : styles.hide].join(" ")} 
                             onClick={toggleActive1} 
@@ -62,7 +62,7 @@ export default function Support() {
             <article className={[styles.menuItem, isActive2 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive2}>
                     <div className={styles.menuItemHeading}>
-                        <h1>Fullmakt</h1>
+                        <h2>Fullmakt</h2>
                         <Image 
                             className={[styles.cross, isActive2 ? styles.display : styles.hide].join(" ")} 
                             onClick={toggleActive2} 
@@ -78,7 +78,7 @@ export default function Support() {
             <article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive3}>
                     <div className={styles.menuItemHeading}>
-                        <h1>Användarvillkor</h1>
+                        <h2>Användarvillkor</h2>
                         <Image 
                             className={[styles.cross, isActive3 ? styles.display : styles.hide].join(" ")} 
                             onClick={toggleActive3} 
@@ -92,7 +92,7 @@ export default function Support() {
             <hr />
             </article>
             <article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
-                <h1>Exempelrubrik (ej klickbar)</h1>
+                <h2>Exempelrubrik (ej klickbar)</h2>
             </article>
         </section>
     </>
