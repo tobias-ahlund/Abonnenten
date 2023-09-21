@@ -5,8 +5,9 @@ import Footer from './components/footer/footer'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { Database } from '@/lib/database.types'
-import { ThemeProvider } from '@/context/ThemeContext'
-
+import { ThemeContext, ThemeProvider } from '@/context/ThemeContext'
+import { useEffect } from 'react'
+import { useTheme } from '@/context/ThemeContext'
 
 
 export const metadata: Metadata = {
@@ -20,8 +21,9 @@ export default async function RootLayout({ children }: {children: React.ReactNod
   const supabase = createServerComponentClient<Database>({ cookies });
   const {
     data: { session }
-} = await supabase.auth.getSession();
+  } = await supabase.auth.getSession();
   
+
   return (
     <html lang="sv">
       <body className={"elza"}>

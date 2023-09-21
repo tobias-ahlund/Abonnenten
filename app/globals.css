@@ -87,6 +87,10 @@ main {
     background-color: #D9D9D9;
 }
 
+main .dark {
+    background-color: #1b1616;
+}
+
 @media only screen and (min-width: 446px) {
     body {
         width: 100vw;

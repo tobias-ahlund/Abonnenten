@@ -41,6 +41,7 @@ export const footerLinkArray: FooterLink[] =
 ]
 
 export default function footerLink({href, src, alt}: FooterLink){
+
     return(
         <li>
             <Link href={href}>
