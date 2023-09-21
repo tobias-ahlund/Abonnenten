@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "app/public/images/logo_brand.svg"
