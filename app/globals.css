@@ -83,7 +83,6 @@ main {
 }
 
 @media only screen and (min-width: 446px) {
-    
     body {
         width: 100vw;
         height: 100vh;
@@ -94,13 +93,63 @@ main {
 
     .mobile-frame {
         background-color: #D9D9D9;
-        overflow: scroll;
         width: 446px;
         height: 667px;
         margin: auto;
+        position: relative;
         border-radius: 15px;
         -ms-overflow-style: none;  /* Hide scrollbar (Explorer, Edge) */
         scrollbar-width: none;  /* Hide scrollbar (Firefox) */
+    }
+
+    header {
+        height: 80px;
+        position: absolute;
+        top: 0;
+        display: flex;
+        left: 0;
+        width: 100%;
+        background-color: var(--colors-base-brand);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+
+    li a {
+        display: inline;
+    }
+
+    main {
+        height: calc(100% - 140px);
+        overflow: scroll;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+    }
+
+    footer {
+        height: var(--measures-height-button-l, 60px);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var(--colors-base-brand);
+        width: 100%;
+    }
+
+    hr {
+        border: none;
+        height: 0.5px;
+        background-color: white;
+        width: 100%;
+        margin: 0;
     }
 
     /* Hide scrollbar (Chrome, Safari, Opera) */
