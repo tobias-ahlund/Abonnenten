@@ -5,6 +5,7 @@ import Footer from './components/footer/footer'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { Database } from '@/lib/database.types'
+import { ThemeProvider } from '@/context/ThemeContext'
 
 
 
@@ -30,11 +31,13 @@ export default async function RootLayout({
     <html lang="sv">
       <body className={"elza"}>
         <div className='mobile-frame'>
-          <Header/>
-          <main>
-            {children}
-          </main>
-          {session && <Footer />}
+          <ThemeProvider>
+            <Header/>
+            <main>
+              {children}
+            </main>
+            {session && <Footer />}
+          </ThemeProvider>
         </div>
       </body>
     </html>
