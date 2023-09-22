@@ -11,12 +11,11 @@ export const dynamic = 'force-dynamic'
 
 export async function GET(request: NextRequest) {
     const requestUrl = new URL(request.url)
-    console.log(requestUrl);
     const code = requestUrl.searchParams.get("code")
 
     if (code) {
         const supabase = createRouteHandlerClient<Database>({ cookies })
-        await supabase.auth.exchangeCodeForSession(code)
+        supabase.auth.exchangeCodeForSession(code)
     }
 
     // URL to redirect to after sign in process completes
