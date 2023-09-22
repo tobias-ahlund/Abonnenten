@@ -29,7 +29,7 @@ export default async function RootLayout({ children }: {children: React.ReactNod
     <html lang="sv" suppressHydrationWarning>
       <body className={"elza"}>
         <div className='mobile-frame'>
-          <Providers attribute="class">
+          <Providers>
             <Header/>
               <main>
                 {children}

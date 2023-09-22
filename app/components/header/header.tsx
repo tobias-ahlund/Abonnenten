@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SunLogo from "app/public/images/lightmode.svg"
@@ -13,14 +13,22 @@ import { useTheme } from "next-themes";
 
 
 export default function Header(){
+    const [mounted, setMounted] = useState(false)
     const { theme, setTheme} = useTheme();
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }    
 
     const handleMouseEvent = (e: MouseEvent<HTMLElement>) => {
         setTheme(theme == "light" ? "dark" : "light")
         e.preventDefault();
       };
 
-    console.log(theme);
     return (
         <header className={styles.header}>
             <Link className={styles.logoWrapper} href="/">

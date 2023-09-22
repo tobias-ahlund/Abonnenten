@@ -16,15 +16,15 @@ const supabase = createServerComponentClient({ cookies });;
 
     return(
         <>
-        God morgon, {user?.email}!
+        <p>God morgon, {user?.email}!</p>
         <ul>
                 {subscriptions?.map((subscription, index) => (
                     <li key={index}>
-                        <span>Id: {subscription.id}</span>
+                        <p>Id: {subscription.id}</p>
                         <br />
-                        <span>Namn: {subscription.name}</span>
+                        <p>Namn: {subscription.name}</p>
                         <br />
-                        <span>Kostnad: {subscription.cost} kr/mån</span>
+                        <p>Kostnad: {subscription.cost} kr/mån</p>
                     </li>
                 ))}
             </ul>

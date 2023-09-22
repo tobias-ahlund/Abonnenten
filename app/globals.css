@@ -43,8 +43,20 @@
     --measures-width-box_min: 320px;
     --measures-width-mobile_max: 479px;
     --measures-width-mobile_min: 360px;
+    --text-color-test: black;
+    --main-bg-test: white;
+    --bg-color-body-test: lightgray;
 }
 
+/* Dark mode */
+[data-theme="dark"] {
+    --text-color-test: white;
+    --main-bg-test: black;
+}
+
+p {
+    color: var(--text-color-test);
+}
 
 @import url("https://p.typekit.net/p.css?s=1&k=rie0uwt&ht=tk&f=52025.52026&a=130402303&app=typekit&e=css");
 
@@ -68,7 +80,7 @@ font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
 
 body {
     /* font-family: "elza-round-variable", sans-serif; */
-    background-color: var(--color-almost-black);
+    background-color: var(--bg-color-body-test);
     color: var(--color-white);
     margin: 0;
     padding: 0;
@@ -85,7 +97,7 @@ footer li {
 
 main {
     color: #1F1F1F;
-    background-color: #D9D9D9;
+    background-color: var(--main-bg-test);
 }
 
 main .dark {
