@@ -134,7 +134,7 @@ main .dark {
     }
 
     main {
-        height: calc(100% - 140px);
+        height: calc(100% - 166px);
         overflow: scroll;
         position: absolute;
         top: 106px;
