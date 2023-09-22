@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SunLogo from "app/public/images/lightmode.svg"
@@ -8,34 +9,32 @@ import Logo from "app/public/images/logo_abo.svg"
 import styles from "./styles.module.css";
 import { MouseEvent } from "react";
 
+import { useTheme } from "next-themes";
+
 
 export default function Header(){
+    const [mounted, setMounted] = useState(false)
+    const { theme, setTheme} = useTheme();
 
-    // const theme = useTheme();
-    // let activeLogo;
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
-    // const handleMouseEvent = (e: MouseEvent<HTMLElement>) => {
-        
-    //     if (theme?.theme == "light") {
-    //         theme.setTheme('dark')
-    //     } else {
-    //         theme?.setTheme('light')
-    //     }
-    //     console.log('clicked', theme);
-        
-    //     e.preventDefault();
-    //   };
+    if (!mounted) {
+        return null
+    }    
+
+    const handleMouseEvent = (e: MouseEvent<HTMLElement>) => {
+        setTheme(theme == "light" ? "dark" : "light")
+        e.preventDefault();
+      };
 
     return (
         <header className={styles.header}>
             <Link className={styles.logoWrapper} href="/">
                 <Image priority src={Logo} alt="Abonnenten logo"/>
             </Link>
-            {/* <Image 
-            src={theme?.theme == 'light' ? MoonLogo: SunLogo} 
-            alt="Light and Darkmode" 
-            onClick={handleMouseEvent}
-            /> */}
+            <Image src={theme == "light" ? MoonLogo : SunLogo} alt="Light and Darkmode" onClick={handleMouseEvent}/>
         </header>
     )
 }
