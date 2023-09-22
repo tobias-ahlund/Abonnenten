@@ -5,9 +5,6 @@ import Footer from './components/footer/footer'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { Database } from '@/lib/database.types'
-import { ThemeContext, ThemeProvider } from '@/context/ThemeContext'
-import { useEffect } from 'react'
-import { useTheme } from '@/context/ThemeContext'
 import { Providers } from './providers'
 
 
