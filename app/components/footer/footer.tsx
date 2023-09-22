@@ -6,10 +6,8 @@ import Image from "next/image"
 import { footerLinkArray } from "./footerLink"
 import { usePathname } from "next/navigation"
 
-import DashboardLogoActive from "app/public/images/logo_bottom-nav-active.svg"
-
 export default function Footer(){
-    const path = usePathname();
+    const currentPath = usePathname();
    
     return (
         <footer className={styles.footer}>
@@ -19,7 +17,7 @@ export default function Footer(){
                     <li>
                         <Link href={footerLink.href}>
                             <Image priority 
-                                src={path === "/dashboard" && footerLink.href === "/dashboard" ? DashboardLogoActive : footerLink.src}
+                                src={currentPath === footerLink.href ? footerLink.altSrc : footerLink.src}
                                 alt={footerLink.alt} 
                             />
                         </Link>
