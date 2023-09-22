@@ -8,6 +8,7 @@ import { Database } from '@/lib/database.types'
 import { ThemeContext, ThemeProvider } from '@/context/ThemeContext'
 import { useEffect } from 'react'
 import { useTheme } from '@/context/ThemeContext'
+import { Providers } from './providers'
 
 
 export const metadata: Metadata = {
@@ -25,16 +26,16 @@ export default async function RootLayout({ children }: {children: React.ReactNod
   
 
   return (
-    <html lang="sv">
+    <html lang="sv" suppressHydrationWarning>
       <body className={"elza"}>
         <div className='mobile-frame'>
-          <ThemeProvider>
+          <Providers attribute="class">
             <Header/>
-            <main>
-              {children}
-            </main>
-            {session && <Footer />}
-          </ThemeProvider>
+              <main>
+                {children}
+              </main>
+              {session && <Footer />}
+          </Providers>
         </div>
       </body>
     </html>

@@ -2,7 +2,7 @@
 
 import styles from './styles.module.css'
 import Image from 'next/image';
-import Cross from "app/public/images/cross.svg";
+import Cross from "app/public/images/Cross.svg";
 
 // terms of service 
 // footer om inloggad annars bara header i layout. 
