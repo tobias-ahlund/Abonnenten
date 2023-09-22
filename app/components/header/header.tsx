@@ -13,10 +13,18 @@ import { MouseEvent } from "react";
 
 export default function Header(){
 
-    const { isDarkMode, toggleTheme} = useTheme();
+    const theme = useTheme();
+    let activeLogo;
 
     const handleMouseEvent = (e: MouseEvent<HTMLElement>) => {
-        toggleTheme()
+        
+        if (theme?.theme == "light") {
+            theme.setTheme('dark')
+        } else {
+            theme?.setTheme('light')
+        }
+        console.log('clicked', theme);
+        
         e.preventDefault();
       };
 
@@ -25,7 +33,7 @@ export default function Header(){
             <Link className={styles.logoWrapper} href="/">
                 <Image priority src={Logo} alt="Abonnenten logo"/>
             </Link>
-            <Image src={isDarkMode ? MoonLogo: SunLogo} alt="Light and Darkmode" onClick={handleMouseEvent}/>
+            <Image src={theme?.theme == 'light' ? MoonLogo: SunLogo} alt="Light and Darkmode" onClick={handleMouseEvent}/>
         </header>
     )
 }

@@ -2,32 +2,24 @@
 
 import { createContext, useContext, useState } from 'react';
 
-type Theme = {
-    isDarkMode: boolean;
-    toggleTheme: Function;
-};
+export type Theme = 'light' | 'dark';
 
-export const ThemeContext = createContext<Theme | undefined>(undefined);
+export type ThemeContextType = {
+    theme: Theme;
+    setTheme(theme: Theme): void;
+}
 
-export const ThemeProvider= ({ children }:{children: React.ReactNode}) => {
+const ThemeContext = createContext<ThemeContextType | null >(null);
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
+const useTheme = () => useContext(ThemeContext);
 
-    const toggleTheme = () => {
-        setIsDarkMode(!isDarkMode)
-        console.log("Theme:", theme);
-    };
-    
-    const theme: Theme = {
-        isDarkMode, 
-        toggleTheme,
-    }
-
+const ThemeProvider= ({ children }:{ children: React.ReactNode }) => {
+    const [theme, setTheme] = useState<Theme>('light')
     return ( 
-        <ThemeContext.Provider value={{isDarkMode, toggleTheme}}>
+        <ThemeContext.Provider value={{theme: theme, setTheme: setTheme}}>
             {children}
         </ThemeContext.Provider>
     )
 }
 
-export const useTheme = () => useContext(ThemeContext) as Theme;
+export { ThemeProvider, useTheme}
