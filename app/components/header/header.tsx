@@ -21,8 +21,8 @@ export default function Header(){
       };
 
     return (
-        <header>
-            <Link href="/">
+        <header className={styles.header}>
+            <Link className={styles.logoWrapper} href="/">
                 <Image priority src={Logo} alt="Abonnenten logo"/>
             </Link>
             <Image src={isDarkMode ? MoonLogo: SunLogo} alt="Light and Darkmode" onClick={handleMouseEvent}/>
