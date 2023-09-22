@@ -1,7 +1,7 @@
 :root {
-    --colors-base-brand: #FFCC50FF;
+    --colors-base-brand: #FFC350FF;
     --colors-base-high-light: #FFFFFFFF;
-    --colors-base-primary: #F2F2F2FF;
+    --colors-base-primary: #F9F3E8FF;
     --colors-base-secondary: #1F1F1FFF;
     --colors-base-semantic_error: #BF3C54FF;
     --colors-base-semantic_error_dl: #BF3C54FF;
@@ -10,10 +10,12 @@
     --colors-base-semantic_success: #74B96EFF;
     --colors-base-semantic_warning: #FF6847FF;
     --colors-components-bg: var(--colors-base-primary);
-    --colors-components-bg_brand: #FFCC50FF;
+    --colors-components-bg_brand: #FFC350FF;
     --colors-components-box-bg: var(--colors-base-brand);
     --colors-components-button-bg: var(--colors-base-secondary);
     --colors-components-button-bg_reversed: #F2F2F2FF;
+    --colors-components-card-bg: var(--colors-base-high-light);
+    --colors-components-card_brand-button: var(--colors-base-brand);
     --colors-components-field-bg: var(--colors-base-primary);
     --colors-components-on-bg: var(--colors-base-secondary);
     --colors-components-on-bg_brand: #1F1F1FFF;
@@ -84,11 +86,11 @@ footer li {
 
 main {
     color: #1F1F1F;
-    background-color: #D9D9D9;
+    background-color: var(--colors-base-primary);
 }
 
-main .dark {
-    background-color: #1b1616;
+.dark {
+    background-color: var(--colors-components-field-bg);
 }
 
 @media only screen and (min-width: 446px) {
