@@ -1,4 +1,4 @@
-import Login from "./components/login";
+import Login from "./components/login/login";
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -8,7 +8,7 @@ import DeleteUser from "./components/deleteUser";
 import Link from "next/link";
 import Image from "next/image";
 import altLogo from "app/public/images/alt-logo.svg";
-
+import styles from "./page.module.css";
 
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies });
@@ -26,15 +26,15 @@ export default async function Home() {
 
   return (
     <>
-      <section className="greeting-section">
+      <section className={styles.greetingSection}>
         <h1>Spara pengar på dina prenumerationer</h1>
-        <div className="altLogoWrapper">
+        <div className={styles.altLogoWrapper}>
           <Image src={altLogo} alt="Alt logo" />
         </div>
       </section>
       <Login/>
-      <section className="greeting-paragraph">
-        <p className="greeting-paragraph">
+      <section className={styles.greetingParagraph}>
+        <p>
           Genom att fortsätta godkänner du Abonnentens <span><Link href="/support">allmäna villkor</Link></span>, <span><Link href="/support">integritetspolicy</Link></span> och att vi får inhämta avtalsinformation enligt <span><Link href="/support">informationsfullmakten</Link></span>.
         </p>
       </section>

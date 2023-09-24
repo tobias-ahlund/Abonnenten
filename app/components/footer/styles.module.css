@@ -1,6 +1,5 @@
-.footer{
+.footer {
     bottom: 0;
-    
 }
 
 .ul {
@@ -13,4 +12,9 @@
     margin: 0;
     padding: 0;
     align-items: center;
+}
+
+.footer li {
+    height: 40px;
+    width: 40px;
 }

@@ -1,4 +1,4 @@
-import Logout from "@/app/components/logout"
+import Logout from "@/app/components/logout/logout"
 import Subscriptions from "@/app/components/subscriptions"
 
 export default function Profile() {

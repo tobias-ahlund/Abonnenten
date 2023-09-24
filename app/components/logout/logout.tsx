@@ -3,9 +3,10 @@
 "use client"
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import type { Database } from "../../lib/database.types";
+import type { Database } from "../../../lib/database.types";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
+import styles from "./styles.module.css";
 
 export default function Logout() {
 
@@ -20,9 +21,8 @@ export default function Logout() {
     };
 
   return (
-      <div>
-          <br />
-          <button onClick={handleSignOut}>Logga ut</button>
+      <div className={styles.logoutButtonWrapper}>
+          <button className={styles.logoutButton} onClick={handleSignOut}>Logga ut</button>
       </div>
   )
 }

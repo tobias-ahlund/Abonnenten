@@ -1,3 +1,17 @@
+@import url("https://p.typekit.net/p.css?s=1&k=rie0uwt&ht=tk&f=52025.52026&a=130402303&app=typekit&e=css");
+
+@font-face {
+font-family:"elza-round-variable";
+src:url("https://use.typekit.net/af/8923d8/0000000000000000774bf5a3/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/8923d8/0000000000000000774bf5a3/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/8923d8/0000000000000000774bf5a3/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"elza-round-variable";
+src:url("https://use.typekit.net/af/cecc41/0000000000000000774bf5a4/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/cecc41/0000000000000000774bf5a4/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/cecc41/0000000000000000774bf5a4/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
 :root {
     --colors-base-brand: #FFC350FF;
     --colors-base-high-light: #FFFFFFFF;
@@ -46,30 +60,28 @@
     --measures-width-mobile_max: 479px;
     --measures-width-mobile_min: 360px;
     --text-color-test: black;
-    --main-bg-test: white;
     --bg-color-body-test: lightgray;
 }
 
 /* Dark mode */
 [data-theme="dark"] {
-    --text-color-test: white;
     --main-bg-test: black;
+    --colors-components-on-bg: #F9F3E8FF;
+    --colors-base-primary: var(--colors-base-secondary);
 }
 
-p {
-    color: var(--text-color-test);
+* {
+    box-sizing: border-box;
+}
+
+.elza { font-family: "elza-round-variable",sans-serif; }
+
+body {
+    /* font-family: "elza-round-variable", sans-serif; */
+    background-color: var(--bg-color-body-test);
+    color: var(--color-white);
     margin: 0;
     padding: 0;
-}
-
-.altLogoWrapper {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40px;
-}
-
-.greeting-section {
-    background-color: var(--colors-base-brand);
 }
 
 h1 {
@@ -82,94 +94,20 @@ h1 {
     padding: 20px;
 }
 
-@import url("https://p.typekit.net/p.css?s=1&k=rie0uwt&ht=tk&f=52025.52026&a=130402303&app=typekit&e=css");
-
-@font-face {
-font-family:"elza-round-variable";
-src:url("https://use.typekit.net/af/8923d8/0000000000000000774bf5a3/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/8923d8/0000000000000000774bf5a3/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/8923d8/0000000000000000774bf5a3/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
-font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
-}
-
-@font-face {
-font-family:"elza-round-variable";
-src:url("https://use.typekit.net/af/cecc41/0000000000000000774bf5a4/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/cecc41/0000000000000000774bf5a4/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/cecc41/0000000000000000774bf5a4/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
-}
-
-.elza { font-family: "elza-round-variable",sans-serif; }
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    /* font-family: "elza-round-variable", sans-serif; */
-    background-color: var(--bg-color-body-test);
-    color: var(--color-white);
+p {
     margin: 0;
     padding: 0;
+    color: var(--colors-components-on-bg);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
 }
 
 li::marker {
     content: none;
 }
 
-footer li {
-    height: 40px;
-    width: 40px;
-}
-
-/*
-Form
-*/
-form {
-    margin-top: 33px;
-}
-
-.input-wrapper {
-    position: relative;
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.input-wrapper:first-of-type {
-    margin-bottom: 33px;
-}
-
-.input-wrapper label {
-    position: absolute;
-    left: 40px;
-    top: 0;
-    padding: 5px;
-    z-index: 1;
-    background-color: #fff;
-    border-radius: 100px;
-    margin-bottom: 0;
-    transform: translateY(-50%)
-}
-
-.input-wrapper label {
-    font-size: 16px;
-    font-weight: 500;
-    display: inline-block;
-}
-
-.input-wrapper input {
-    border-radius: 100px;
-    border: 1px solid black;
-    width: calc(100% - 40px);
-    height: 52px;
-    margin: auto;
-    text-indent: 20px;
-    color: var(--colors-components-text-on-field);
-    font-size: 16px;
-}
-/*
-Form end
-*/
-
 main {
-    color: #1F1F1F;
     background-color: var(--colors-base-primary);
 }
 
@@ -177,10 +115,6 @@ main {
     height: calc(100% - 106px);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-}
-
-.dark {
-    background-color: var(--colors-components-field-bg);
 }
 
 @media only screen and (min-width: 446px) {
@@ -261,11 +195,6 @@ main {
     }
 }
 
-.button-wrapper {
-    display: flex;
-    flex-direction: column;
-}
-
 button {
     width: calc(100% - 40px);
     margin: auto;
@@ -277,19 +206,7 @@ button {
     font-weight: 500;
     background-color: white;
     box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.15);
-}
-
-.greeting-paragraph p {
-    margin: auto;
-    width: calc(100% - 40px);
-    line-height: 20px;
-    font-weight: 300;
-    letter-spacing: -0.16px;
-    padding-bottom: 20px;
-}    
-
-.greeting-paragraph span {
-    font-weight: bold;
+    padding: 0;
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -297,3 +214,13 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: none;
     font-weight: 700;
 }
+
+::placeholder {
+    color: var(--colors-components-text-on-field);
+    opacity: 1; /* Firefox */
+}
+  
+::-ms-input-placeholder { /* Edge 12 -18 */
+    color: var(--colors-components-text-on-field);
+}
+  

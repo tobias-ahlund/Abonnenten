@@ -1,0 +1,51 @@
+.buttonWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonWrapper button {
+  background-color: var(--colors-components-box-bg);
+}
+
+.form {
+  margin-top: 13px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  margin-bottom: 33px;
+}
+
+.inputWrapper:last-of-type {
+  margin-bottom: 20px;
+}
+
+.inputWrapper label {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  padding: 5px;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  transform: translateY(-50%)
+}
+
+.inputWrapper label {
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.inputWrapper input {
+  border-radius: 100px;
+  border: 1px solid black;
+  width: calc(100% - 40px);
+  height: 52px;
+  margin: auto;
+  text-indent: 20px;
+  color: var(--colors-base-secondary);
+  font-size: 16px;
+}
