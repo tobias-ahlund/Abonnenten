@@ -3,6 +3,7 @@ import Link from "next/link";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Database } from "@/lib/database.types";
 import { cookies } from "next/headers";
+import page from "./page.module.css";
 
 
 export default async function Dashboard() {
@@ -16,7 +17,8 @@ const supabase = createServerComponentClient({ cookies });;
 
     return(
         <>
-        <p>God morgon, {user?.email}!</p>
+        <h1 className={page.h1BigTop}>God morgon, {user?.email}!</h1>
+        <h2>Att göra</h2>
         <ul>
                 {subscriptions?.map((subscription, index) => (
                     <li key={index}>

@@ -46,30 +46,39 @@ export default function Login() {
       <div>
           <>
             <form>
-              <label htmlFor="email">Mejl</label>
-              <input 
-                onChange={(e) => setEmail(e.target.value)} 
-                name="email" 
-                id="email" 
-                type="email"
-                value={email}
-              />
-              <br/>
-              <label htmlFor="password">Lösenord</label>
-              <input 
-                onChange={(e) => setPassword(e.target.value)} 
-                name="password" 
-                id="password" 
-                type="password"
-                value={password}
-              />
+              <div className="input-wrapper">
+                <label htmlFor="email">Mejl</label>
+                <input 
+                  onChange={(e) => setEmail(e.target.value)} 
+                  name="email" 
+                  placeholder="exempel@mejl.com"
+                  id="email" 
+                  type="email"
+                  value={email}
+                />
+              </div>
+              <div className="input-wrapper">
+                <label 
+                  className="password-label"
+                  htmlFor="password">
+                    Lösenord
+                </label>
+                <input 
+                  className="password-input"
+                  onChange={(e) => setPassword(e.target.value)} 
+                  name="password" 
+                  id="password" 
+                  type="password"
+                  value={password}
+                />
+              </div>
             </form>
           </>
         <>
-          <br />
-          <button onClick={handleSignIn}>Logga in</button>
-          <br />
-          <button onClick={handleSignUp}>Bli medlem</button>
+          <section className="button-wrapper">
+            <button onClick={handleSignIn}>Logga in</button>
+            <button onClick={handleSignUp}>Bli medlem</button>
+          </section>
         </>
       </div>
   )

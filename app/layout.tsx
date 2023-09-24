@@ -27,9 +27,12 @@ export default async function RootLayout({ children }: {children: React.ReactNod
         <div className='mobile-frame'>
           <Providers>
             <Header/>
-              <main>
+              {!session ? (<main className="main-long">
                 {children}
-              </main>
+              </main>) : 
+              (<main>
+                {children}
+              </main>)}
               {session && <Footer />}
           </Providers>
         </div>

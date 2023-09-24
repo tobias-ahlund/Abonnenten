@@ -6,6 +6,8 @@ import { Database } from "@/lib/database.types";
 import Subscriptions from "./components/subscriptions";
 import DeleteUser from "./components/deleteUser";
 import Link from "next/link";
+import Image from "next/image";
+import altLogo from "app/public/images/alt-logo.svg";
 
 
 export default async function Home() {
@@ -24,9 +26,18 @@ export default async function Home() {
 
   return (
     <>
-      <h1>Spara pengar på dina abonnemang!</h1>
+      <section className="greeting-section">
+        <h1>Spara pengar på dina prenumerationer</h1>
+        <div className="altLogoWrapper">
+          <Image src={altLogo} alt="Alt logo" />
+        </div>
+      </section>
       <Login/>
-      <p>Genom att fortsätta godkänner du Abonnentens <Link href="/support">allmäna villkor</Link>, <Link href="/support">integritetspolicy</Link> och att vi får inhämta avtalsinformation enligt <Link href="/support">informationsfullmakten</Link>.</p>
+      <section className="greeting-paragraph">
+        <p className="greeting-paragraph">
+          Genom att fortsätta godkänner du Abonnentens <span><Link href="/support">allmäna villkor</Link></span>, <span><Link href="/support">integritetspolicy</Link></span> och att vi får inhämta avtalsinformation enligt <span><Link href="/support">informationsfullmakten</Link></span>.
+        </p>
+      </section>
     </>
   )
 }
