@@ -1,0 +1,11 @@
+.textWrapper p {
+    padding: 0 20px;
+}
+
+.h1BigTop {
+    padding-top: 40px;
+}
+
+.textWrapper p:last-of-type {
+    padding-bottom: 20px;
+}

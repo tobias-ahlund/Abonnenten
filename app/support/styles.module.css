@@ -1,3 +1,7 @@
+.h1BigTop {
+    padding-top: 40px;
+}
+
 .display {
     display: block;
 }
@@ -6,14 +10,11 @@
     display: none;
 }
 
-.menuItemHeading {
-    display: flex;
-    justify-content: space-between;
-}
-
 .menuWrapper {
     display: flex;
     flex-direction: column;
+    width: calc(100% - 40px);
+    margin: auto;
 }
 
 .menuItem:last-child {
@@ -21,9 +22,12 @@
 }
 
 .cross {
-    /* */
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .orderTop {
     order: -1;
 }
+

@@ -94,6 +94,16 @@ h1 {
     padding: 20px;
 }
 
+h2 {
+    color: var(--colors-components-on-bg);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 100% */
+    padding: 20px;
+    margin: 0;
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -183,8 +193,8 @@ main {
 
     hr {
         border: none;
-        height: 0.5px;
-        background-color: white;
+        height: 2px;
+        background-color: var(--colors-components-on-bg);
         width: 100%;
         margin: 0;
     }

@@ -41,61 +41,54 @@ export default function Support() {
 
     return (
     <>
-        {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : <><h1>Support</h1><hr /></>} 
         <section className={styles.menuWrapper}>
-            <article className={[styles.menuItem, isActive1 && styles.orderTop].join(" ")}>
+            {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : <><h1 className={styles.h1BigTop}>Support</h1><hr /></>} 
+            {isActive2 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive1 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive1}>
-                    <div className={styles.menuItemHeading}>
-                        <h2>Integritetspolicy</h2>
-                        <Image 
-                            className={[styles.cross, isActive1 ? styles.display : styles.hide].join(" ")} 
-                            onClick={toggleActive1} 
-                            src={Cross} alt="close button" 
-                        />
-                    </div>
+                    {!isActive1 && <h2>Integritetspolicy</h2>}
+                    <Image 
+                        className={[styles.cross, isActive1 ? styles.display : styles.hide].join(" ")} 
+                        onClick={toggleActive1} 
+                        src={Cross} alt="close button" 
+                    />
                     <div className={isActive1 ? styles.display : styles.hide}>
                         <Integrity />
                     </div>
                 </div>
-                <hr />
-            </article>
-            <article className={[styles.menuItem, isActive2 && styles.orderTop].join(" ")}>
+                {!isActive1 && (<hr />)}
+            </article>)}
+            {isActive1 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive2 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive2}>
-                    <div className={styles.menuItemHeading}>
-                        <h2>Fullmakt</h2>
-                        <Image 
-                            className={[styles.cross, isActive2 ? styles.display : styles.hide].join(" ")} 
-                            onClick={toggleActive2} 
-                            src={Cross} alt="close button" 
-                        />
-                    </div>
+                    {!isActive2 && <h2>Fullmakt</h2>}
+                    <Image 
+                        className={[styles.cross, isActive2 ? styles.display : styles.hide].join(" ")} 
+                        onClick={toggleActive2} 
+                        src={Cross} alt="close button" 
+                    />
                     <div className={isActive2 ? styles.display : styles.hide}>
                         <Mandate />
                     </div>
                 </div>
-                <hr />
-            </article>
-            <article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
+                {!isActive2 && (<hr />)}
+            </article>)}
+            {isActive1 ? "" : isActive2 ? "" : (<article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive3}>
-                    <div className={styles.menuItemHeading}>
-                        <h2>Användarvillkor</h2>
-                        <Image 
-                            className={[styles.cross, isActive3 ? styles.display : styles.hide].join(" ")} 
-                            onClick={toggleActive3} 
-                            src={Cross} alt="close button" 
-                        />
-                    </div>
+                    {!isActive3 && <h2>Användarvillkor</h2>}
+                    <Image 
+                        className={[styles.cross, isActive3 ? styles.display : styles.hide].join(" ")} 
+                        onClick={toggleActive3} 
+                        src={Cross} alt="close button" 
+                    />
                     <div className={isActive3 ? styles.display : styles.hide}>
                         <Terms />
                     </div>
                 </div>
-            <hr />
-            </article>
-            <article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
+                {!isActive3 && (<hr />)}
+            </article>)}
+            {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
                 <h2>Exempelrubrik (ej klickbar)</h2>
-            </article>
+            </article>)}
         </section>
     </>
-    
     )
 }
