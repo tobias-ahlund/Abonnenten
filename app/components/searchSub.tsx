@@ -3,29 +3,34 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useState } from "react";
 
+
 export default function SearchSub() {
     const [search, setSearch] = useState<any>();
-    const [searchResult, setSearchResult] = useState<any>([]);
+    const [searchResult, setSearchResult] = useState<any[]>();
     const supabase = createClientComponentClient()
 
     async function handleClick() {
         const { data, error} = await supabase
-            .from("subscriptions")
+            .from(`subscription_presets`)
             .select()
             .textSearch("name", `"${search}"`, {
                 type: "websearch",
             })
 
             if (data) {
+                // console.log(data);
+                
                 if (data.length == 0) {
-                    setSearchResult("Inget hittat");
+                    console.log(error);
+                    setSearchResult(['Inga träffar'])
                 } else {
                     data.forEach((result) => {
-                        setSearchResult([result.name]);
+                        console.log(result);
+                        setSearchResult([result.category_id]);
                     });
                 }
-                console.log(search);
-                console.log(searchResult);
+                // console.log(search);
+                // console.log(searchResult);
             }
     }
     
@@ -41,7 +46,13 @@ export default function SearchSub() {
             />
             <button onClick={handleClick}>Sök</button>
             <h2>Sökord: {search}</h2>
-            <h2>Sökresultat: {searchResult}</h2>
+            <h2>Sökresultat: {searchResult} </h2>
+            {searchResult?.map((result : any, index: number) => (
+                    <li key={index}>
+                        <span>Namn: {result.name}</span>
+                        <span>{result.cost} kr/mån</span>
+                    </li>
+                ))}
         </>
     );
 }
