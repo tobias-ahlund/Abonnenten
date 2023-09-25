@@ -35,7 +35,6 @@ export default function Login() {
                 <input 
                 onChange={(e) => setFirstName(e.target.value)} 
                 name="firstName" 
-                placeholder="Förnamn"
                 id="firstName" 
                 type="text"
                 value={firstName}
@@ -46,7 +45,6 @@ export default function Login() {
                 <input 
                 onChange={(e) => setLastName(e.target.value)} 
                 name="lastName" 
-                placeholder="Efternamn"
                 id="lastName" 
                 type="text"
                 value={lastName}
@@ -57,7 +55,6 @@ export default function Login() {
                 <input 
                 onChange={(e) => setPhoneNum(e.target.value)} 
                 name="phoneNum" 
-                placeholder="Telefonnummer"
                 id="phoneNum" 
                 type="tel"
                 value={phoneNum}

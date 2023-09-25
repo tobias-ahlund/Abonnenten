@@ -73,7 +73,7 @@ export default function Support() {
             </article>)}
             {isActive1 ? "" : isActive2 ? "" : (<article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive3}>
-                    {!isActive3 && <h2>Användarvillkor</h2>}
+                    {!isActive3 && <h2>Allmäna villkor</h2>}
                     <Image 
                         className={[styles.cross, isActive3 ? styles.display : styles.hide].join(" ")} 
                         onClick={toggleActive3} 
