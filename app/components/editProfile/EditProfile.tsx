@@ -7,24 +7,30 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 
 export default function Login() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
   const [phoneNum, setPhoneNum] = useState("");
 
   const router = useRouter();
   const supabase = createClientComponentClient<Database>();
 
   const handleClick = async () => {
-    /* await supabase.auth.signUp({
-      firstName: firstName,
-      lastName: lastName,
-      phoneNum: phoneNum,
-      options: {
-        emailRedirectTo: `${location.origin}/auth/callback`,
-      },
-    });
-    router.refresh(); */
-  };
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (session) {
+      const { data, error } = await supabase 
+        .from("user_info")
+        .insert([
+          { 
+            user_id: session?.user?.id,
+            first_name: firstName, 
+            last_name: lastName, 
+            phone_number: phoneNum,
+          }
+        ])
+      router.refresh(); 
+      };
+    }
 
   return (
       <>
