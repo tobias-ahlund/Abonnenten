@@ -17,12 +17,28 @@ export default async function Home() {
     data: { session },
   } = await supabase.auth.getSession();
 
+  const user_id = session?.user.id;
+  console.log(user_id);
+
   const { data: { user } } = await supabase.auth.getUser();
   
+  // Add row to user_info table if user is verified and does not already have a row
   if (session) {
+    const { data, error } = await supabase
+      .from("user_info")
+      .select()
+      .eq("user_id", user_id)
+      
+      // Row does not exist if data array is empty, proceeds to add row
+      if (data?.length == 0) {
+        console.log("empty")
+        const { data, error } = await supabase
+          .from("user_info")
+          .insert({ user_id: user_id })
+      }
+
     redirect("/dashboard");
   } 
-  
 
   return (
     <>

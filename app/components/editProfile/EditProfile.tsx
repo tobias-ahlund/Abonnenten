@@ -17,17 +17,19 @@ export default function Login() {
   const handleClick = async () => {
     const { data: { session } } = await supabase.auth.getSession();
 
+    const user_id = session?.user.id;
+
     if (session) {
       const { data, error } = await supabase 
         .from("user_info")
-        .insert([
+        .update([
           { 
-            user_id: session?.user?.id,
             first_name: firstName, 
             last_name: lastName, 
             phone_number: phoneNum,
           }
         ])
+        .eq("user_id", user_id)
       router.refresh(); 
       };
     }
