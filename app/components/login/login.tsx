@@ -62,7 +62,7 @@ export default function Login() {
         </form>
         <section className={styles.buttonWrapper}>
           <button onClick={handleSignIn}>Logga in</button>
-          <button onClick={handleSignUp}>Bli medlem</button>
+          <button className={styles.signUpButton} onClick={handleSignUp}>Bli medlem</button>
         </section>
       </>
   )

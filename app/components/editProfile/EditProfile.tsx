@@ -171,7 +171,7 @@ export default function Login() {
               </div>
             </form>
             <div className={styles.buttonWrapper}>
-                <button onClick={handleClick}>Spara ändringar</button>
+                <button className={styles.saveButton} onClick={handleClick}>Spara ändringar</button>
             </div>
         </section>
       </>

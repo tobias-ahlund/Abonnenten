@@ -59,15 +59,17 @@ font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
     --measures-width-box_min: 320px;
     --measures-width-mobile_max: 479px;
     --measures-width-mobile_min: 360px;
-    --text-color-test: black;
-    --bg-color-body-test: lightgray;
+    --bg-color-body: lightgray;
+    --outline: black;
 }
 
 /* Dark mode */
 [data-theme="dark"] {
-    --main-bg-test: black;
     --colors-components-on-bg: #F9F3E8FF;
     --colors-base-primary: var(--colors-base-secondary);
+    --colors-base-high-light: #1F1F1FFF;
+    --outline: white;
+    --colors-components-stroke: #F9F3E8FF;
 }
 
 * {
@@ -78,7 +80,7 @@ font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
 
 body {
     /* font-family: "elza-round-variable", sans-serif; */
-    background-color: var(--bg-color-body-test);
+    background-color: var(--bg-color-body);
     color: var(--color-white);
     margin: 0;
     padding: 0;
@@ -217,6 +219,7 @@ button {
     background-color: white;
     box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.15);
     padding: 0;
+    border: 1px solid var(--colors-components-stroke);
 }
 
 button:hover {
@@ -237,4 +240,13 @@ a:link, a:visited, a:hover, a:active {
 ::-ms-input-placeholder { /* Edge 12 -18 */
     color: var(--colors-components-text-on-field);
 }
-  
+
+input {
+    background-color: var(--colors-base-high-light);
+    border: 1px solid var(--colors-components-stroke);
+}
+
+input:focus {
+    outline: var(--outline);
+    caret-color: var(--colors-components-on-bg);
+}

@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.signUpButton {
+  background-color: var(--colors-components-box-bg);
+}
+
 .form {
   margin-top: 33px;
 }
