@@ -1,6 +1,6 @@
 .logoutButton {
     background-color: var(--colors-base-semantic_error_dl);
-    color: var(--colors-components-button-bg_reversed);
+    color: #F9F3E8FF;
 }
 
 .logoutButtonWrapper {

@@ -4,6 +4,7 @@
 }
 
 .signUpButton {
+  color: var(--colors-base-secondary);
   background-color: var(--colors-components-box-bg);
 }
 
@@ -22,12 +23,13 @@
 }
 
 .inputWrapper label {
+  color: var(--colors-components-on-bg);
   position: absolute;
   left: 40px;
   top: 0;
   padding: 5px;
   z-index: 1;
-  background-color: #fff;
+  background-color: var(--colors-base-primary);
   border-radius: 100px;
   margin-bottom: 0;
   transform: translateY(-50%)

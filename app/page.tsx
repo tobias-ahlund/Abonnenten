@@ -3,8 +3,6 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { Database } from "@/lib/database.types";
-import Subscriptions from "./components/subscriptions";
-import DeleteUser from "./components/deleteUser";
 import Link from "next/link";
 import Image from "next/image";
 import altLogo from "app/public/images/alt-logo.svg";

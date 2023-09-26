@@ -1,5 +1,5 @@
 // redigera profil
-import Logout from "@/app/components/logout/logout"
+import Logout from "@/app/components/logout/logout";
 import styles from "../page.module.css";
 import EditProfile from "@/app/components/editProfile/EditProfile";
 
