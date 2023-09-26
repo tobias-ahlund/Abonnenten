@@ -11,8 +11,12 @@ import { MouseEvent } from "react";
 
 import { useTheme } from "next-themes";
 
+type Props = {
+    className?: string 
+}
 
-export default function Header(){
+
+export default function Header(styleProp : Props){
     const [mounted, setMounted] = useState(false)
     const { theme, setTheme} = useTheme();
 
@@ -29,8 +33,11 @@ export default function Header(){
         e.preventDefault();
       };
 
+      console.log(styleProp.className);
+      
+
     return (
-        <header className={styles.header}>
+        <header className={styleProp.className}>
             <Link className={styles.logoWrapper} href="/">
                 <Image priority src={Logo} alt="Abonnenten logo"/>
             </Link>
@@ -38,3 +45,7 @@ export default function Header(){
         </header>
     )
 }
+// {!session ? : 
+//               (<main>
+//                 {children}
+//               </main>)}

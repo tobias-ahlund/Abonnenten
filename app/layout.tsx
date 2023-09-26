@@ -26,7 +26,7 @@ export default async function RootLayout({ children }: {children: React.ReactNod
       <body className={"elza"}>
         <div className='mobile-frame'>
           <Providers>
-            <Header/>
+            <Header className={!session ? "unauth": "auth"}/>
               {!session ? (<main className="main-long">
                 {children}
               </main>) : 
