@@ -19,7 +19,9 @@ const supabase = createServerComponentClient({ cookies });;
         .select("first_name")
 
         if (data) {
-            firstName = `, ${data[0].first_name}!`;
+            if (data[0].first_name) {
+                firstName = `, ${data[0].first_name}!`;
+            }
         }
   }
 

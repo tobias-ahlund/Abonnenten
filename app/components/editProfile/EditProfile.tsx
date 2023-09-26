@@ -20,19 +20,103 @@ export default function Login() {
     const user_id = session?.user.id;
 
     if (session) {
-      const { data, error } = await supabase 
-        .from("user_info")
-        .update([
-          { 
-            first_name: firstName, 
-            last_name: lastName, 
-            phone_number: phoneNum,
-          }
-        ])
-        .eq("user_id", user_id)
-      router.refresh(); 
+      if (firstName && !lastName && !phoneNum) {
+        const { data, error } = await supabase 
+          .from("user_info")
+          .update([
+            { 
+              first_name: firstName, 
+            }
+          ])
+          .eq("user_id", user_id)
+      
+        router.refresh(); 
       };
-    }
+
+      if (!firstName && lastName && !phoneNum) {
+        const { data, error } = await supabase 
+          .from("user_info")
+          .update([
+            { 
+              last_name: lastName, 
+            }
+          ])
+          .eq("user_id", user_id)
+      
+        router.refresh(); 
+      };
+
+      if (!firstName && !lastName && phoneNum) {
+        const { data, error } = await supabase 
+          .from("user_info")
+          .update([
+            { 
+              phone_number: phoneNum,
+            }
+          ])
+          .eq("user_id", user_id)
+      
+        router.refresh(); 
+      };
+
+      if (firstName && lastName && !phoneNum) {
+        const { data, error } = await supabase 
+          .from("user_info")
+          .update([
+            { 
+              first_name: firstName, 
+              last_name: lastName, 
+            }
+          ])
+          .eq("user_id", user_id)
+      
+        router.refresh(); 
+      };
+
+      if (!firstName && lastName && phoneNum) {
+        const { data, error } = await supabase 
+          .from("user_info")
+          .update([
+            { 
+              last_name: lastName, 
+              phone_number: phoneNum,
+            }
+          ])
+          .eq("user_id", user_id)
+      
+        router.refresh(); 
+      };
+
+      if (firstName && !lastName && phoneNum) {
+        const { data, error } = await supabase 
+          .from("user_info")
+          .update([
+            { 
+              first_name: firstName, 
+              phone_number: phoneNum,
+            }
+          ])
+          .eq("user_id", user_id)
+      
+        router.refresh(); 
+      };
+
+      if (firstName && lastName && phoneNum) {
+        const { data, error } = await supabase 
+          .from("user_info")
+          .update([
+            { 
+              first_name: firstName, 
+              last_name: lastName, 
+              phone_number: phoneNum,
+            }
+          ])
+          .eq("user_id", user_id)
+      
+        router.refresh(); 
+      };
+    } 
+  }
 
   return (
       <>
