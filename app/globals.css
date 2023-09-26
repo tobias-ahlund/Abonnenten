@@ -25,6 +25,8 @@ font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
     --colors-base-semantic_warning: #FF6847FF;
     --colors-components-bg: var(--colors-base-primary);
     --colors-components-bg_brand: #FFC350FF;
+    --colors-components-orange-black: #1F1F1FFF;
+    --colors-components-orange-black-reversed: #FFC350FF;
     --colors-components-box-bg: var(--colors-base-brand);
     --colors-components-button-bg: #1F1F1FFF;
     --colors-components-button-bg_reversed: #F2F2F2FF;
@@ -65,6 +67,8 @@ font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
 
 /* Dark mode */
 [data-theme="dark"] {
+    --colors-components-orange-black: #FFC350FF;
+    --colors-components-orange-black-reversed: #1F1F1FFF;
     --colors-components-on-bg: #F9F3E8FF;
     --colors-base-primary: var(--colors-base-secondary);
     --colors-base-high-light: #1F1F1FFF;

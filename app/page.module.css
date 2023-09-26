@@ -5,7 +5,14 @@
 }
 
 .greetingSection {
-  background-color: var(--colors-base-brand);
+  background-color: var(--colors-components-orange-black-reversed);
+}
+
+.greetingSection h1 {
+  color: var(--colors-components-orange-black);
+}
+.greetingSection svg path {
+  fill: var(--colors-components-orange-black);
 }
 
 .greetingParagraph p {
