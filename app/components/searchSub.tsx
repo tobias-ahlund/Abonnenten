@@ -3,10 +3,11 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useState } from "react";
 
-
 export default function SearchSub() {
     const [search, setSearch] = useState<any>();
-    const [searchResult, setSearchResult] = useState<any[]>();
+    const [searchResult, setSearchResult] = useState<any>([]);
+    const [secondSearchResult, setSecondSearchResult] = useState<any>([]);
+
     const supabase = createClientComponentClient()
 
     async function handleClick() {
@@ -18,22 +19,33 @@ export default function SearchSub() {
             })
 
             if (data) {
-                // console.log(data);
-                
                 if (data.length == 0) {
-                    console.log(error);
-                    setSearchResult(['Inga träffar'])
+                    setSearchResult([])
                 } else {
-                    data.forEach((result) => {
-                        console.log(result);
-                        setSearchResult([result.category_id]);
+                    data.map((result) => {
+                        setSearchResult((prevData: any) => [...prevData, [result.name, result.cost]]);
                     });
                 }
-                // console.log(search);
-                // console.log(searchResult);
             }
+
+        const { data: results } = await supabase
+            .from("subscriptions")
+            .select()
+            .textSearch("name", `"${search}"`, {
+                type: "websearch",
+        })
+
+        if (results) {
+            if (results.length == 0) {
+                setSecondSearchResult([])
+            } else {
+                results.map((result) => {
+                    setSecondSearchResult((prevResult: any) => [...prevResult, [result.name, result.cost]]);
+                });
+            }
+        }
     }
-    
+
     return (
         <>
             <label htmlFor="searchSub">Sök på abonnemang:</label>
@@ -46,13 +58,23 @@ export default function SearchSub() {
             />
             <button onClick={handleClick}>Sök</button>
             <h2>Sökord: {search}</h2>
-            <h2>Sökresultat: {searchResult} </h2>
-            {searchResult?.map((result : any, index: number) => (
+            <h2>Sökresultat:</h2>
+            <ul>
+                {searchResult?.map((result : any, index: number) => (
                     <li key={index}>
-                        <span>Namn: {result.name}</span>
-                        <span>{result.cost} kr/mån</span>
+                        <p>Namn: {result[0]}</p>
+                        <p>{result[1]} kr/mån</p>
                     </li>
                 ))}
+            </ul>
+            <ul>
+                {secondSearchResult?.map((result: any, index: number) => (
+                    <li key={index}>
+                        <p>Namn: {result[0]}</p>
+                        <p>{result[1]} kr/mån</p>
+                    </li>
+                ))}
+            </ul>
         </>
     );
 }
