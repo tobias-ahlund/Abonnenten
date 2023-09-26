@@ -49,3 +49,20 @@
   color: var(--colors-base-secondary);
   font-size: 16px;
 }
+
+.notificationWrapper {
+  padding: 0 20px 0 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.notificationWrapper:last-of-type {
+  padding-bottom: 20px;
+}
+
+.notificationWrapper input {
+  margin: 0;
+  margin-right: 10px;
+  accent-color: black;
+}

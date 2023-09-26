@@ -122,36 +122,53 @@ export default function Login() {
       <>
         <section>
             <form className={styles.form}>
-            <div className={styles.inputWrapper}>
-                <label htmlFor="firstName">Förnamn</label>
-                <input 
-                onChange={(e) => setFirstName(e.target.value)} 
-                name="firstName" 
-                id="firstName" 
-                type="text"
-                value={firstName}
-                />
-            </div>
-            <div className={styles.inputWrapper}>
-                <label htmlFor="lastName">Efternamn</label>
-                <input 
-                onChange={(e) => setLastName(e.target.value)} 
-                name="lastName" 
-                id="lastName" 
-                type="text"
-                value={lastName}
-                />
-            </div>
-            <div className={styles.inputWrapper}>
-                <label htmlFor="phoneNum">Telefonnnummer</label>
-                <input 
-                onChange={(e) => setPhoneNum(e.target.value)} 
-                name="phoneNum" 
-                id="phoneNum" 
-                type="tel"
-                value={phoneNum}
-                />
-            </div>
+              <div className={styles.inputWrapper}>
+                  <label htmlFor="firstName">Förnamn</label>
+                  <input 
+                  onChange={(e) => setFirstName(e.target.value)} 
+                  name="firstName" 
+                  id="firstName" 
+                  type="text"
+                  value={firstName}
+                  />
+              </div>
+              <div className={styles.inputWrapper}>
+                  <label htmlFor="lastName">Efternamn</label>
+                  <input 
+                  onChange={(e) => setLastName(e.target.value)} 
+                  name="lastName" 
+                  id="lastName" 
+                  type="text"
+                  value={lastName}
+                  />
+              </div>
+              <div className={styles.inputWrapper}>
+                  <label htmlFor="phoneNum">Telefonnnummer</label>
+                  <input 
+                  onChange={(e) => setPhoneNum(e.target.value)} 
+                  name="phoneNum" 
+                  id="phoneNum" 
+                  type="tel"
+                  value={phoneNum}
+                  />
+              </div>
+              <div>
+                <h2>Välj hur du vill få aviseringar</h2>
+                <div className={styles.notificationWrapper}>
+                  <input 
+                    type="radio" 
+                    name="notifChoice"
+                  />
+                  <label>Appnotiser</label>
+                </div>
+                <div className={styles.notificationWrapper}>
+                  <input 
+                    type="radio" 
+                    name="notifChoice"
+                  />
+                  <label>Mejl</label>
+                </div>
+              </div>
             </form>
             <div className={styles.buttonWrapper}>
                 <button onClick={handleClick}>Spara ändringar</button>
