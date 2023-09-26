@@ -13,8 +13,8 @@ export default function Footer(){
         <footer className={styles.footer}>
             <nav>
                 <ul className={styles.ul}>
-                    {footerLinkArray.map(footerLink => {return(
-                    <li>
+                    {footerLinkArray.map((footerLink, index) => {return(
+                    <li key={index}>
                         <Link href={footerLink.href}>
                             <Image priority 
                                 src={currentPath === footerLink.href ? footerLink.altSrc : footerLink.src}
