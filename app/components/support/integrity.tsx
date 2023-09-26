@@ -5,7 +5,7 @@ export default function Integrity(){
         <article className={styles.textWrapper}>
             <h1 className={styles.h1BigTop}>Integritetspolicy</h1>
             <p>
-            Denna Integritetspolicy ("Policyn") gäller Abonnenten AB (org. nr 987654-3210), med adress Fantasigatan 456, 567 89 Drömstaden, e-post: help@abonnenten.se. Abonnenten AB ("Bolaget", "oss", "vi", "vår") tillhandahåller en abonnemangstjänst via mobilapp eller via webbsidan www.abonnenten.se. I denna Integritetspolicy används samma termer och definitioner som i Allmänna villkor.
+            Denna Integritetspolicy (&quot;Policyn&quot;) gäller Abonnenten AB (org. nr 987654-3210), med adress Fantasigatan 456, 567 89 Drömstaden, e-post: help@abonnenten.se. Abonnenten AB (&quot;Bolaget&quot;, &quot;oss&quot;, &quot;vi&quot;, &quot;vår&quot;) tillhandahåller en abonnemangstjänst via mobilapp eller via webbsidan www.abonnenten.se. I denna Integritetspolicy används samma termer och definitioner som i Allmänna villkor.
             </p>
             <h2>1. Allmänt</h2>
             <p> 
