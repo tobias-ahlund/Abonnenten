@@ -86,7 +86,7 @@ font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
 
 body {
     /* font-family: "elza-round-variable", sans-serif; */
-    background-color: var(--bg-color-body);
+    background-color: var(--colors-base-brand);
     color: var(--color-white);
     margin: 0;
     padding: 0;
@@ -246,6 +246,7 @@ hr {
         display: flex;
         justify-content: center;
         align-items: center;    
+        background-color: var(--bg-color-body);
     }
 
     .mobile-frame {
