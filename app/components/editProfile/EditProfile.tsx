@@ -6,13 +6,37 @@ import type { Database } from "../../../lib/database.types";
 import { useState } from "react";
 import styles from "./styles.module.css";
 
-export default function Login() {
+export default function EditProfile() {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [phoneNum, setPhoneNum] = useState("");
+  const [placeholderFirstName, setPlaceholderFirstName] = useState("Inget valt");
+  const [placeholderPhoneNum, setPlaceholderPhoneNum] = useState("Inget valt");
+  const [placeholderLastName, setPlaceholderLastName] = useState("Inget valt");
 
   const router = useRouter();
   const supabase = createClientComponentClient<Database>();
+
+  FetchInfo();
+  async function FetchInfo() {
+    let { data } = await supabase
+      .from("user_info")
+      .select("first_name, last_name, phone_number")
+
+      if (data && data.length != 0) {
+        if (data[0].first_name) {
+          setPlaceholderFirstName(data[0].first_name);
+        }
+
+        if (data[0].last_name) {
+          setPlaceholderLastName(data[0].last_name);
+        }
+
+        if (data[0].phone_number) {
+          setPlaceholderPhoneNum(data[0].phone_number);
+        }
+      }
+  }
 
   const handleClick = async () => {
     const { data: { session } } = await supabase.auth.getSession();
@@ -130,6 +154,7 @@ export default function Login() {
                   id="firstName" 
                   type="text"
                   value={firstName}
+                  placeholder={placeholderFirstName}
                   />
               </div>
               <div className={styles.inputWrapper}>
@@ -140,6 +165,7 @@ export default function Login() {
                   id="lastName" 
                   type="text"
                   value={lastName}
+                  placeholder={placeholderLastName}
                   />
               </div>
               <div className={styles.inputWrapper}>
@@ -150,6 +176,7 @@ export default function Login() {
                   id="phoneNum" 
                   type="tel"
                   value={phoneNum}
+                  placeholder={placeholderPhoneNum}
                   />
               </div>
               <div>
