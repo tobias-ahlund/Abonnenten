@@ -201,6 +201,7 @@ input:focus {
 
 header {
     position: fixed;
+    z-index: 10;
     top: 0;
     display: flex;
     left: 0;
@@ -213,6 +214,7 @@ header {
 
 footer {
     position: fixed;
+    z-index: 10;
 }
 
 nav {
