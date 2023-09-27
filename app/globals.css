@@ -86,10 +86,15 @@ font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
 
 body {
     /* font-family: "elza-round-variable", sans-serif; */
-    background-color: var(--colors-base-brand);
     color: var(--color-white);
-    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
     padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;    
+    background-color: var(--bg-color-body);
 }
 
 
@@ -245,15 +250,6 @@ hr {
 }
 
 @media only screen and (min-width: 480px) {
-    body {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;    
-        background-color: var(--bg-color-body);
-    }
-
     .mobile-frame {
         background-color: #D9D9D9;
         border-radius: 15px;
