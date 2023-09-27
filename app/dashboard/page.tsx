@@ -4,6 +4,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Database } from "@/lib/database.types";
 import { cookies } from "next/headers";
 import page from "./page.module.css";
+import FirstGreeting from "../components/firstGreeting/firstGreeting";
 
 export default async function Dashboard() {
 const supabase = createServerComponentClient({ cookies });
@@ -43,6 +44,7 @@ const supabase = createServerComponentClient({ cookies });
         <>
         <h1 className={page.h1BigTop}>{greeting}{firstName}</h1>
         <h2>Att göra</h2>
+        <FirstGreeting />
         <ul>
                 {subscriptions?.map((subscription, index) => (
                     <li key={index}>
