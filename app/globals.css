@@ -94,7 +94,7 @@ body {
     margin: 0;
     justify-content: center;
     align-items: center;    
-    background-color: var(--bg-color-body);
+    background-color: var(--colors-base-brand);
 }
 
 
@@ -255,6 +255,10 @@ hr {
         border-radius: 15px;
         width: 446px;
         height: 667px;
+    }
+
+    body {
+        background-color: var(--bg-color-body);
     }
 
     header {
