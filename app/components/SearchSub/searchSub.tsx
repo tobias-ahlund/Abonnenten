@@ -2,6 +2,9 @@
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useState } from "react";
+import styles from "./styles.module.css";
+import Image from "next/image";
+import Search from "app/public/images/Search.svg";
 
 export default function SearchSub() {
     const [search, setSearch] = useState<any>();
@@ -10,7 +13,12 @@ export default function SearchSub() {
 
     const supabase = createClientComponentClient()
 
-    async function handleClick() {
+    async function handleSubmit(e: any) {
+        setSearchResult([]);
+        setSecondSearchResult([]);
+
+        e.preventDefault();
+
         const { data, error} = await supabase
             .from(`subscription_presets`)
             .select()
@@ -48,15 +56,25 @@ export default function SearchSub() {
 
     return (
         <>
-            <label htmlFor="searchSub">Sök på abonnemang:</label>
-            <input 
-                type="search" 
-                id="searchSub" 
-                name="searchSub" 
-                onChange={(e) => setSearch(e.target.value)}
-                value={search}
-            />
-            <button onClick={handleClick}>Sök</button>
+            <form 
+                className={styles.form}
+                onSubmit={handleSubmit}
+            >
+                <div className={styles.inputWrapper}>
+                    <label htmlFor="searchSub">Sök</label>
+                    <input 
+                        type="search" 
+                        id="searchSub" 
+                        name="searchSub" 
+                        onChange={(e) => setSearch(e.target.value)}
+                        value={search}
+                        placeholder="Sök på abonnemang"
+                    />
+                    <div className={styles.search}>
+                        <Image onClick={handleSubmit} src={Search} alt="search icon" />
+                    </div>
+                </div>
+            </form>
             <h2>Sökord: {search}</h2>
             <h2>Sökresultat:</h2>
             <ul>
