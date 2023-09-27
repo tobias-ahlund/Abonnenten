@@ -194,6 +194,9 @@ input:focus {
 
 .mobile-frame {
     width: 100vw;
+    height: 100vh;
+    margin: auto;
+    position: relative;
 }
 
 header {
@@ -251,11 +254,9 @@ hr {
 
     .mobile-frame {
         background-color: #D9D9D9;
+        border-radius: 15px;
         width: 446px;
         height: 667px;
-        margin: auto;
-        position: relative;
-        border-radius: 15px;
     }
 
     header {
