@@ -5,9 +5,19 @@ import { Database } from "@/lib/database.types";
 import { cookies } from "next/headers";
 import page from "./page.module.css";
 
-
 export default async function Dashboard() {
-const supabase = createServerComponentClient({ cookies });;
+const supabase = createServerComponentClient({ cookies });
+
+    const currentHour = new Date().getHours();
+    let greeting;
+
+    if (currentHour >= 4 && currentHour < 10) {
+        greeting = "Good morgon";
+    } else if (currentHour >= 10 && currentHour < 17) {
+        greeting = "God dag";
+    } else {
+        greeting = "God kväll";
+    }
 
   const { data: { user } } = await supabase.auth.getUser();
 
@@ -31,7 +41,7 @@ const supabase = createServerComponentClient({ cookies });;
 
     return(
         <>
-        <h1 className={page.h1BigTop}>God morgon{firstName}</h1>
+        <h1 className={page.h1BigTop}>{greeting}{firstName}</h1>
         <h2>Att göra</h2>
         <ul>
                 {subscriptions?.map((subscription, index) => (
