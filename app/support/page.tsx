@@ -42,7 +42,7 @@ export default function Support() {
     return (
     <>
         <section className={styles.menuWrapper}>
-            {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : <><h1 className={styles.h1BigTop}>Support</h1><hr /></>} 
+            {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : <><h1 className={styles.h1BigTop}>Support</h1></>} 
             {isActive2 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive1 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive1}>
                     {!isActive1 && <h2>Integritetspolicy</h2>}
@@ -55,7 +55,6 @@ export default function Support() {
                         <Integrity />
                     </div>
                 </div>
-                {!isActive1 && (<hr />)}
             </article>)}
             {isActive1 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive2 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive2}>
@@ -69,7 +68,6 @@ export default function Support() {
                         <Mandate />
                     </div>
                 </div>
-                {!isActive2 && (<hr />)}
             </article>)}
             {isActive1 ? "" : isActive2 ? "" : (<article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
                 <div onClick={toggleActive3}>
@@ -83,10 +81,21 @@ export default function Support() {
                         <Terms />
                     </div>
                 </div>
-                {!isActive3 && (<hr />)}
             </article>)}
             {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
-                <h2>Exempelrubrik (ej klickbar)</h2>
+                <h2>Så funkar det</h2>
+            </article>)}
+            {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
+                <h2>FAQ</h2>
+            </article>)}
+            {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
+                <h2>Kontakt</h2>
+            </article>)}
+            {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
+                <h2>Om oss</h2>
+            </article>)}
+            {isActive1 ? "" : isActive2 ? "" : isActive3 ? "" : (<article className={[styles.menuItem, isActive3 && styles.orderTop].join(" ")}>
+                <h2>GDPR</h2>
             </article>)}
         </section>
     </>

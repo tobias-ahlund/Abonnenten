@@ -13,7 +13,7 @@
 .menuWrapper {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 40px);
+    /* width: calc(100% - 40px); */
     margin: auto;
 }
 
@@ -31,3 +31,16 @@
     order: -1;
 }
 
+.menuItem h2 {
+    padding-bottom: 30px;
+    padding-top: 0;
+    color: #806128;
+}
+
+.menuWrapper article:first-of-type h2 {
+    padding-top: 10px;
+}
+
+.menuWrapper article:last-of-type h2 {
+    padding-bottom: 20px;
+}

@@ -19,11 +19,12 @@ export default function EditProfile({ changeView}: ChildProps) {
   const [placeholderLastName, setPlaceholderLastName] = useState("Inget valt");
   const [isEditView, setEditView] = useState<boolean>(true);
 
+  const router = useRouter();
+
   useEffect(()=>{
     window.scrollTo(0,0);
   },[])
 
-  const router = useRouter();
   const supabase = createClientComponentClient<Database>();
 
   function handleChangeView() {
@@ -155,6 +156,7 @@ export default function EditProfile({ changeView}: ChildProps) {
         router.refresh(); 
       };
     } 
+    router.refresh();
   }
 
   return (

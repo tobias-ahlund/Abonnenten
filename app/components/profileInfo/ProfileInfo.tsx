@@ -66,7 +66,7 @@ export default function ProfileInfo({ changeView }: ChildProps) {
       }
   }
 
-  const handleClick = async () => {
+  /* const handleClick = async () => {
     const { data: { session } } = await supabase.auth.getSession();
 
     const user_id = session?.user.id;
@@ -168,7 +168,7 @@ export default function ProfileInfo({ changeView }: ChildProps) {
         router.refresh(); 
       };
     } 
-  }
+  } */
 
   return (
       <>

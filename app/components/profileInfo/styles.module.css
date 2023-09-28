@@ -111,6 +111,10 @@
   padding-left: 10px;
 }
 
+.hr {
+  height: 1px;
+}
+
 .hr:not(:last-of-type) {
   margin-bottom: 20px;
 }

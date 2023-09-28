@@ -65,4 +65,5 @@
 
 .subsWrapper li div:first-of-type p {
     font-weight: 600;
+    white-space: nowrap;
 }
