@@ -9,6 +9,11 @@ import Link from "next/link";
 import Image from "next/image";
 import altLogo from "app/public/images/alt-logo.svg";
 import styles from "./page.module.css";
+import dynamic from "next/dynamic";
+
+const Notifications = dynamic(() => import('@/app/components/notifications'), {
+  ssr: false,
+})
 
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies });
@@ -33,6 +38,7 @@ export default async function Home() {
         </div>
       </section>
       <Login/>
+      <Notifications/>
       <section className={styles.greetingParagraph}>
         <p>
           Genom att fortsätta godkänner du Abonnentens <span><Link href="/support">allmäna villkor</Link></span>, <span><Link href="/support">integritetspolicy</Link></span> och att vi får inhämta avtalsinformation enligt <span><Link href="/support">informationsfullmakten</Link></span>.

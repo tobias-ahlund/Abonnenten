@@ -1,0 +1,22 @@
+{
+    "name": "Abonnenten",
+    "short_name": "Abonnenten",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#B12A34",
+    "background_color": "#B12A34",
+    "description": "Spara pengar på dina abonnemang",
+    "icons": [
+      {
+        "src": "images/logo_abo.svg",
+        "sizes": "82x46",
+        "type": "image/svg"
+      },
+      {
+        "src": "images/alt-logo.svg",
+        "sizes": "174x88",
+        "type": "image/svg"
+      }
+    ],
+    "related_applications": []
+  }

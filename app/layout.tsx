@@ -23,6 +23,7 @@ export default async function RootLayout({ children }: {children: React.ReactNod
  
   return (
     <html lang="sv" suppressHydrationWarning>
+      <link rel='manifest' href="/manifest.json"/>
       <body className={"elza"}>
         <div className='mobile-frame'>
           <Providers>
