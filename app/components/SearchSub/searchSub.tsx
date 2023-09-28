@@ -14,6 +14,8 @@ export default function SearchSub() {
     const [searchResult, setSearchResult] = useState<any>([]);
     const [secondSearchResult, setSecondSearchResult] = useState<any>([]);
 
+    const router = useRouter();
+
     async function handleSubmit(e: any) {
         setSearchResult([]);
         setSecondSearchResult([]);
@@ -56,7 +58,6 @@ export default function SearchSub() {
     }
 
     async function addSubPreset(subPresetInfo: string[]) {
-        /* const router = useRouter(); */
         const { data: {session} } = await supabase.auth.getSession();
         
         if (session) {
@@ -79,9 +80,7 @@ export default function SearchSub() {
                 console.log(data);
             }
 
-            /* setSearchResult([]);
-            setSecondSearchResult([]); */
-            /* router.refresh(); */
+            router.refresh(); 
         }
     }
 

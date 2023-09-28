@@ -1,6 +1,11 @@
 .greetingWrapper {
     width: calc(100% - 40px);
     margin: auto;
+    margin-bottom: 20px;
+}
+
+.greetingWrapper button {
+    background-color: var(--colors-components-bg_brand);
 }
 
 .greetingWrapper div:first-of-type {
@@ -8,13 +13,13 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: white;
+    background-color: var(--colors-components-bg_brand);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
 .greetingWrapper div:last-of-type {
-    background-color: var(--colors-components-bg_brand);
+    background-color: white;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     width: 100%;

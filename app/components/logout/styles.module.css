@@ -1,6 +1,7 @@
 .logoutButton {
     background-color: var(--colors-base-semantic_error_dl);
     color: #F9F3E8FF;
+    margin-top: 20px;
 }
 
 .logoutButtonWrapper {

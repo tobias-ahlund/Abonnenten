@@ -1,10 +1,10 @@
-<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_1030_1265" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36">
-<path d="M20.9333 15.5998V11.5998M14.5333 15.5998V11.5998M17.7333 33.9997C26.5701 33.9997 33.7333 26.8366 33.7333 17.9998C33.7333 9.16305 26.5701 1.99988 17.7333 1.99988C8.89657 1.99988 1.7334 9.16305 1.7334 17.9998C1.7334 26.8366 8.89657 33.9997 17.7333 33.9997Z" stroke="white" stroke-width="3.19999" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17.733 24.3995C19.4304 24.3995 21.0582 23.7252 22.2584 22.5249C23.4587 21.3247 24.133 19.6969 24.133 17.9995V15.5995H11.333V17.9995C11.333 19.6969 12.0073 21.3247 13.2075 22.5249C14.4077 23.7252 16.0356 24.3995 17.733 24.3995Z" fill="white" stroke="white" stroke-width="3.19999" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17.7334 34.0002V24.4003" stroke="white" stroke-width="3.19999" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_2439_19186" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="33" height="33">
+<path d="M19.6324 14.342V10.7171M13.8324 14.342V10.7171M16.7324 31.0168C24.7408 31.0168 31.2324 24.5252 31.2324 16.517C31.2324 8.50877 24.7408 2.01721 16.7324 2.01721C8.72407 2.01721 2.23242 8.50877 2.23242 16.517C2.23242 24.5252 8.72407 31.0168 16.7324 31.0168Z" stroke="white" stroke-width="3.19999" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.7316 22.3166C18.2699 22.3166 19.7451 21.7055 20.8329 20.6178C21.9206 19.5301 22.5316 18.0549 22.5316 16.5166V14.3417H10.9316V16.5166C10.9316 18.0549 11.5427 19.5301 12.6304 20.6178C13.7181 21.7055 15.1934 22.3166 16.7316 22.3166Z" fill="white" stroke="white" stroke-width="3.19999" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.7324 31.0173V22.3174" stroke="white" stroke-width="3.19999" stroke-linecap="round" stroke-linejoin="round"/>
 </mask>
-<g mask="url(#mask0_1030_1265)">
-<path d="M-1.4668 -1.19727H36.9331V37.2026H-1.4668V-1.19727Z" fill="#FFCC50"/>
+<g mask="url(#mask0_2439_19186)">
+<path d="M-0.667969 -0.880127H34.132V33.9194H-0.667969V-0.880127Z" fill="#1F1F1F"/>
 </g>
 </svg>

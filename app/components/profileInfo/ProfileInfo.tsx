@@ -5,19 +5,25 @@ import { useRouter } from "next/navigation";
 import type { Database } from "../../../lib/database.types";
 import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+import Image from "next/image";
+import profileIcon1 from "@/app/public/images/profile-icon1.svg";
+import profileIcon2 from "@/app/public/images/profile-icon2.svg";
+import profileIcon3 from "@/app/public/images/profile-icon3.svg";
+import Link from "next/link";
 
 interface ChildProps {
   changeView: (value: boolean) => void;
 }
 
-export default function EditProfile({ changeView}: ChildProps) {
+export default function ProfileInfo({ changeView }: ChildProps) {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [phoneNum, setPhoneNum] = useState("");
   const [placeholderFirstName, setPlaceholderFirstName] = useState("Inget valt");
   const [placeholderPhoneNum, setPlaceholderPhoneNum] = useState("Inget valt");
   const [placeholderLastName, setPlaceholderLastName] = useState("Inget valt");
-  const [isEditView, setEditView] = useState<boolean>(true);
+  const [email, setEmail] = useState<string | undefined>("")
+  const [isEditView, setEditView] = useState<boolean>(false);
 
   useEffect(()=>{
     window.scrollTo(0,0);
@@ -31,9 +37,16 @@ export default function EditProfile({ changeView}: ChildProps) {
     setEditView(editView);
     changeView(editView);
   }
-
+  
   FetchInfo();
   async function FetchInfo() {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (session) {
+      const emailAddress = session.user.email;
+      setEmail(emailAddress);
+    }
+
     let { data } = await supabase
       .from("user_info")
       .select("first_name, last_name, phone_number")
@@ -160,9 +173,32 @@ export default function EditProfile({ changeView}: ChildProps) {
   return (
       <>
         <section>
-          <h1>Redigera profil</h1>
+            <h1>Profil</h1>
+            <section className={styles.profilesWrapper}>
+              <div className={styles.profileWrapper}>
+                <div className={styles.imageWrapper}>
+                  <Image src={profileIcon1} alt="profile icon" />
+                </div>
+                <p>{placeholderFirstName + " " + placeholderLastName}</p>
+              </div>
+              <hr className={styles.hr} />
+              <div className={styles.profileWrapper}>
+                <div className={styles.imageWrapper}>
+                  <Image src={profileIcon2} alt="profile icon" />
+                </div>
+                <p>{email}</p>
+              </div>
+              <hr className={styles.hr} />
+              <div className={styles.profileWrapper}>
+                <div className={styles.imageWrapper}>
+                  <Image src={profileIcon3} alt="profile icon" />
+                </div>
+                <p>{placeholderPhoneNum}</p>
+              </div>
+              <hr className={styles.hr} />
+            </section>
             <form className={styles.form}>
-              <div className={styles.inputWrapper}>
+              {/* <div className={styles.inputWrapper}>
                   <label htmlFor="firstName">Förnamn</label>
                   <input 
                   onChange={(e) => setFirstName(e.target.value)} 
@@ -194,7 +230,7 @@ export default function EditProfile({ changeView}: ChildProps) {
                   value={phoneNum}
                   placeholder={placeholderPhoneNum}
                   />
-              </div>
+              </div> */}
               <div>
                 <div className={styles.notifInfo}>
                   <h2>Välj när och hur du vill få aviseringar</h2>
@@ -215,12 +251,12 @@ export default function EditProfile({ changeView}: ChildProps) {
                   <label>Mejl</label>
                 </div>
               </div>
-            </form>
+            </form> 
             <div className={styles.buttonWrapper}>
-                <button className={styles.saveButton} onClick={handleClick}>Spara ändringar</button>
+                <button className={styles.editButton} onClick={handleChangeView}>Ändra</button>
             </div>
             <div className={styles.backButtonWrapper}>
-                <button className={styles.backButton} onClick={handleChangeView}>Tillbaka</button>
+                <Link href="/dashboard"><button className={styles.backButton}>Tillbaka</button></Link>
             </div>
         </section>
       </>

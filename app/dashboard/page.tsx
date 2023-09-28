@@ -5,11 +5,12 @@ import { Database } from "@/lib/database.types";
 import { cookies } from "next/headers";
 import page from "./page.module.css";
 import FirstGreeting from "../components/firstGreeting/firstGreeting";
+import Logout from "../components/logout/logout";
 
 export default async function Dashboard() {
 const supabase = createServerComponentClient({ cookies });
 
-    const currentHour = new Date().getHours();
+    const currentHour = new Date().getHours(); 
     let greeting;
 
     if (currentHour >= 4 && currentHour < 10) {
@@ -18,7 +19,7 @@ const supabase = createServerComponentClient({ cookies });
         greeting = "God dag";
     } else {
         greeting = "God kväll";
-    }
+    } 
 
   const { data: { user } } = await supabase.auth.getUser();
 
@@ -43,9 +44,9 @@ const supabase = createServerComponentClient({ cookies });
     return(
         <>
         <h1 className={page.h1BigTop}>{greeting}{firstName}</h1>
-        <h2>Att göra</h2>
+        <h2>Abonnemang</h2>
         <FirstGreeting />
-        <ul>
+        {/* <ul>
                 {subscriptions?.map((subscription, index) => (
                     <li key={index}>
                         <p>Id: {subscription.id}</p>
@@ -55,7 +56,8 @@ const supabase = createServerComponentClient({ cookies });
                         <p>Kostnad: {subscription.cost} kr/mån</p>
                     </li>
                 ))}
-            </ul>
+            </ul> */}
+        <Logout />
         </>
     );
     

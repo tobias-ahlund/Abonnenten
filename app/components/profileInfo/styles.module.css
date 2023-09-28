@@ -3,10 +3,6 @@
     flex-direction: column;
 }
 
-.buttonWrapper button {
-  background-color: var(--colors-components-box-bg);
-}
-
 .form {
   margin-top: 13px;
 }
@@ -67,8 +63,8 @@
   accent-color: var(--colors-components-on-bg);
 }
 
-.saveButton {
-  color: var(--colors-components-on-box);
+.editButton {
+  background-color: var(--colors-base-high-light);
 }
 
 .backButton {
@@ -90,4 +86,36 @@
 
 .notifInfo h2 {
   padding-bottom: 10px;
+}
+
+.profilesWrapper {
+  padding: 20px;
+  gap: 20px;
+}
+
+.profileWrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.profileWrapper img {
+  width: 31px;
+  height: 31px;
+}
+
+.profileWrapper div {
+  width: 31px;
+  height: 31px;
+  margin-right: 20px;
+  padding-left: 10px;
+}
+
+.hr:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.backButtonWrapper a {
+  width: 100%;
+  display: flex;
 }
