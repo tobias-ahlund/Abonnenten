@@ -9,3 +9,9 @@
 .textWrapper p:last-of-type {
     padding-bottom: 20px;
 }
+
+.textWrapper h2 {
+    color: black !important;
+    padding: 20px !important;
+}
+
