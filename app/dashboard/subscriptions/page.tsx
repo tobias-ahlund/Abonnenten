@@ -1,5 +1,5 @@
 import Logout from "@/app/components/logout/logout"
-import Subscriptions from "@/app/components/subscriptions"
+import Subscriptions from "@/app/components/Subscriptions/subscriptions"
 import SearchSub from "@/app/components/SearchSub/searchSub"
 
 export default function Profile() {
