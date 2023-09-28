@@ -10,14 +10,18 @@ import Netflix from "/app/public/images/netflix.png";
 import Apple_tv from "/app/public/images/apple_tv.png";
 import Spotify from "/app/public/images/spotify.svg";
 
+interface Subscription {
+    subscription_presets: {
+      logo: string;
+    };
+  }
+
 export default async function Subscriptions() {
 const supabase = createServerComponentClient({ cookies })
 
 let { data: subscriptions, error } = await supabase
     .from('subscriptions')
-    .select("id, name, cost, subscription_presets ( logo )")
-
-    console.log(subscriptions && subscriptions)
+    .select("id, name, cost, subscription_presets ( logo )") 
 
     const items = subscriptions;
     const totalCostMonth = items?.reduce((total, item) => total + item.cost, 0);
@@ -44,10 +48,15 @@ let { data: subscriptions, error } = await supabase
                             <div className={styles.logoWrapper}>
                                 <Image
                                     key={index}
-                                    src={subscription.subscription_presets.logo === "Netflix" ? Netflix 
-                                    : subscription.subscription_presets.logo === "Apple_tv" ? Apple_tv 
-                                    : subscription.subscription_presets.logo === "Spotify" ? Spotify 
-                                    : Placeholder}
+                                    src={
+                                        subscription.name.includes("Netflix") 
+                                        ? Netflix 
+                                        : subscription.name.includes("Apple")
+                                        ? Apple_tv 
+                                        : subscription.name.includes("Spotify") 
+                                        ? Spotify 
+                                        : Placeholder
+                                    }
                                     alt="subscription icon"
                                 />
                             </div>
