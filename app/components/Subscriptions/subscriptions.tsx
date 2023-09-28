@@ -13,6 +13,10 @@ const supabase = createServerComponentClient({ cookies })
 let { data: subscriptions, error } = await supabase
     .from('subscriptions')
     .select("id,name,cost")
+
+    const items = subscriptions;
+    const totalCostMonth = items?.reduce((total, item) => total + item.cost, 0);
+    const totalCostYear = (totalCostMonth && totalCostMonth * 12);
     
     return (
         <>
@@ -21,11 +25,11 @@ let { data: subscriptions, error } = await supabase
             <section className={styles.costWrapper}>
                 <div>
                     <p>Totalt månad</p>
-                    <p>X kr</p>
+                    <p>{totalCostMonth} kr</p>
                 </div>
                 <div>
                     <p>Totalt år</p>
-                    <p>X kr</p>
+                    <p>{totalCostYear} kr</p>
                 </div>
             </section>
             <ul className={styles.subsWrapper}>
