@@ -14,7 +14,7 @@ const supabase = createServerComponentClient({ cookies });
     let greeting;
 
     if (currentHour >= 4 && currentHour < 10) {
-        greeting = "Good morgon";
+        greeting = "God morgon";
     } else if (currentHour >= 10 && currentHour < 17) {
         greeting = "God dag";
     } else {
