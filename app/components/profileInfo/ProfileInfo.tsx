@@ -179,7 +179,15 @@ export default function ProfileInfo({ changeView }: ChildProps) {
                 <div className={styles.imageWrapper}>
                   <Image src={profileIcon1} alt="profile icon" />
                 </div>
-                <p>{placeholderFirstName || placeholderLastName == "Inget valt" ? "Inget valt" : placeholderFirstName + " " + placeholderLastName}</p>
+                <p>
+                  {placeholderFirstName == "Inget valt" && placeholderLastName == "Inget valt" 
+                  ? "Inget valt" 
+                  : placeholderFirstName == "Inget valt" && placeholderLastName
+                  ? placeholderLastName
+                  : placeholderFirstName && placeholderLastName == "Inget valt" 
+                  ? placeholderFirstName
+                  : placeholderFirstName + " " + placeholderLastName}
+                </p>
               </div>
               <hr className={styles.hr} />
               <div className={styles.profileWrapper}>
